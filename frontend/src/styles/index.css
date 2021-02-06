@@ -1,0 +1,29 @@
+.display-container {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-container {
+    background-color: #F9F8F8;
+    border-radius: 25px;
+    padding: 25px;
+    width: fit-content;
+    height: fit-content;
+}
+
+body {
+    background-image: url("./bg_img.jpg");
+    /*Needs to be fixed*/
+    background-repeat: repeat; 
+    width: 100%;
+    height: 100%;
+}
