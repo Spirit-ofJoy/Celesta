@@ -6,8 +6,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 400px;
-  width: 600px;
+  height: 80%;
+  width: 70%;
   background: #f2f2f2;
   overflow: hidden;
   border-radius: 20px;
@@ -39,7 +39,9 @@ h1 {
   content: "";
   height: 100%;
   width: 50%;
-  background: url("./logo.jpg") white;
+  background: url("./logo/left.jpg") white;
+  background-size: 100% 100%;
+  background-position: right;
   background-repeat: no-repeat;
   transition: 1s;
 }
@@ -50,15 +52,17 @@ h1 {
   height: 100%;
   width: 50%;
   right: 0;
-  background: url("./logo.jpg") white;
+  background: url("./logo/right.jpg") white;
+  background-size: 100% 100%;
+  background-position: left;
   background-repeat: no-repeat;
   transition: 1s;
 }
 
 .home-container:hover .home-flap::after {
-  transform: translatex(300px);
+  transform: translatex(100%);
 }
 
 .home-container:hover .home-flap::before{
-  transform: translatex(-300px);
+  transform: translatex(-100%);
 }
