@@ -9,9 +9,11 @@ class Home extends Component {
         return (
             <div className="home-container">
                 <div className="home-content">
-                    <h1>Home goes here</h1>
+                    <button>To click</button>
                 </div>
-                <div className="home-flap"></div>
+                <div className="home-flap">
+                    <div className="home-subflap"></div>
+                </div>
             </div>
 
         )
