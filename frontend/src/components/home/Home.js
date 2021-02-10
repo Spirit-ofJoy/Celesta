@@ -22,17 +22,25 @@ class Home extends Component {
                     <div className="home-container">
                         <div className="home-content">
                             <div className="home-card">
-                                <div className="home-subcard"></div>
+                                <div className="home-subcard-1">
+                                    <div className="details">
+                                        <div className="center">
+                                            <h1>Sign-In with an existing account<br /></h1>
+                                            <button type="button" class="btn btn-outline-dark"  id="home-login-btn">Proceed to Login</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="home-card">
                                 <h6>Hi click this shit.</h6>
-                                <button type="button" className="btn btn-primary">Primary</button>
+                                
                             </div>
                         </div>
 
                         <div className="home-flap"></div>
                     </div>
                 </div>
+
             </div>
         )
     }
