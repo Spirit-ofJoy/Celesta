@@ -1,0 +1,223 @@
+.login-page-container {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    position: absolute;
+    height: 90%;
+    width: 100%;
+}
+/*---------------------------------------------
+            Wave css
+--------------------------------------------*/
+:root {
+    --wave-height: 10%;
+}
+.login-header {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    height: 100%;
+}
+.login-name-and-waves {
+    background: linear-gradient(60deg, rgba(36, 101, 255, 1) 0%, rgba(36, 101, 255, 0.9) 100%);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    border: 1px solid rgba(36, 101, 255, 1);
+}
+.login-name {
+    max-width: 75%;
+}
+.login-inner-header {
+    height: 90%;
+    width: 100%;
+    margin: 0;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+    padding: 0;
+}
+.login-waves {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    margin-bottom: -2%;
+    /*Fix for safari gap*/
+    min-height: 10%;
+    max-height: 20%;
+}
+
+/*Flex box for containers*/
+#login-flexbx {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+}
+
+  /* Animation */
+.login-parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+.login-parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.login-parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.login-parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}    
+.login-parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+     transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/*------------
+   Login Card
+------------*/
+#login-cardbox {
+    width: 95%;
+    height: 100%;
+    background-color: #050505;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-main-card{
+    top: 15%;
+    left: 5%;
+    border: solid;
+    border-color: #fff;
+    border-width: 1%;
+    position: relative;
+    overflow: hidden;
+    width: 330px;
+    height: 550px;
+    background: #fff;
+    border-radius: 20px;
+    padding-top: 120px;
+    box-sizing:border-box;
+    transition: .3s;
+    cursor:pointer;
+}
+.login-main-card:hover{
+    transform: translate(-3px, -3px);
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+}
+.login-main-top-block1{
+    position: absolute;
+    background: #3AAED8;
+    width: 200%;
+    height: 300px;
+    left: -250px;
+    top: -190px;
+    transform: rotate(-18deg);
+}
+.login-main-top-block2{
+    position: absolute;
+    background: rgba(43, 217, 254, 0.3);
+    width: 200%;
+    height: 300px;
+    top: -80px;
+    transform: translate(-230px,-180px) rotate(18deg);
+}
+.login-main-title{
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    color: #070707;
+    font-size: 16px;
+}
+.login-main-input-block i{
+    position: absolute;
+    color: #FF927A;
+    top: 14px;
+    left: 48px;
+}
+.login-main-input-block{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items:center;
+}
+.login-main-block{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    margin-top: 15px;
+    position:relative;
+    transition: .3s;
+}
+  
+.login-main-txtfld {
+    box-sizing:border-box;
+    padding-left: 35px;
+    color: #1D2F6F;
+    background: #F8F5F0;
+    border: none;
+    border-radius: 10px;
+    width: 260px;
+    height: 45px;
+    outline: none;
+}
+.login-main-txtfld::placeholder { 
+    color: #0E273C;
+    opacity: 0.6; 
+}
+.login-main-txtfld:hover {
+    transform:translate(-2px,-2px)
+}
+
+#login-main-btn {
+    outline: none;
+    cursor:pointer;
+    border: none;
+    color: white;
+    background: #FF007F;
+    margin-top: 20px;
+    height: 45px;
+    width: 260px;
+    font-size: 18px;
+    border-radius: 15px;
+    transition: .3s;
+}
+#login-main-btn:hover {
+    transform:translate(-2px,-2px)
+}
+  
+.login-main-link-block{
+    margin-top: 10%;
+    font-family: 'Varela Round', sans-serif;
+}
+.login-main-link {
+    display: block;
+    opacity: 0.8;
+}
+
+.login-main-linking {
+    padding: 2%;
+}
+#Signup-linking {
+    text-decoration: none;
+    color: #050505;
+}
+.login-main-linking:hover {
+    background-color: rgba(255, 0, 127, 0.5);
+    transition: 1.5s;
+}
+

@@ -1,9 +1,14 @@
 import React from 'react';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Home.css';
 
 class Home extends Component {
+
+    signupBtnClick() {
+        console.log("Signup clicked!");
+    }
 
     render() {
         return (
@@ -26,14 +31,20 @@ class Home extends Component {
                                     <div className="details">
                                         <div className="center">
                                             <h1>Sign-In with an existing account<br /></h1>
-                                            <button type="button" class="btn btn-outline-dark"  id="home-login-btn">Proceed to Login</button>
+                                            <Link to="/login"><button type="button" className="btn btn-danger"  id="home-login-btn" >Proceed to Login</button></Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="home-card">
-                                <h6>Hi click this shit.</h6>
-                                
+                            <div className="home-subcard-2">
+                                    <div className="details">
+                                        <div className="center">
+                                            <h1>Register and make a new account<br /></h1>
+                                            <button type="button" className="btn btn-success"  id="home-signup-btn" onClick={ () => this.signupBtnClick() }>Proceed to Sign up</button>
+                                        </div>
+                                    </div>
+                                </div>                                
                             </div>
                         </div>
 
