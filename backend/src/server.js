@@ -13,7 +13,6 @@ app.get('/', (req, res) => {
 app.post('/login', (req, res) => {
     login.validateLogin(req.body.username, req.body.password); 
     res.send("Logging in.");
-    //console.log(req.body.username);
 });
 
 app.listen(port, () => { 
