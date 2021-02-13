@@ -1,0 +1,27 @@
+.route-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.route-fade-appear,
+.route-fade-enter {
+    opacity: 0;
+    z-index: 1;
+}
+.route-fade-appear-active,
+.route-fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms linear 150ms;
+}
+
+.route-fade-exit {
+    opacity: 1;
+}
+
+.route-fade-exit,
+.route-fade-exit-active {
+    opacity: 0;
+    transition: opacity 150ms linear;
+}
