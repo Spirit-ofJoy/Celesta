@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { SwitchTransition, CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Home from './components/home/Home';
 import Login from './components/login/Login';
+import './styles/Routing.css';
 
 //Utility class to handle Routing on Web-app
 export default class Routing extends Component {
@@ -10,17 +12,27 @@ export default class Routing extends Component {
     render() {
         return (
             <BrowserRouter>
-                <Switch>
+                <Route render={({ location }) => (
 
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
+                    <TransitionGroup>
+                        <CSSTransition key={location.key} timeout={600} classNames="route-fade">
 
-                    <Route path="/login">
-                        <Login />
-                    </Route>
-                    
-                </Switch>
+                            <Switch classNames="route-page" location={location}>
+
+                                <Route exact path="/" >
+                                    <Home />
+                                </Route>
+
+                                <Route path="/login">
+                                    <Login />
+                                </Route>
+
+                            </Switch>
+
+                        </CSSTransition>
+                    </TransitionGroup>
+
+                )} />
             </BrowserRouter>
         )
     }
