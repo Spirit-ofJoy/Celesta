@@ -1,0 +1,387 @@
+/*---------------------------------------------
+Wave css
+--------------------------------------------*/
+
+/*----------------------------------------------
+Root Element. Copy this to every css part if you are splitting the css for
+any component  
+---------------------------------------------*/
+:root {
+--wave-height: 12%;
+--top-bottom-margin: 5%;
+--right-left-margin: 5%;
+--details-heading-color: #aaaaaa;
+--transparent: rgba(0, 0, 0, 0);
+--scroll-bar-width: 4px;
+--color: #1abc9c;
+--transition: 0.2s ease-in-out;
+--shift-text-initially: 25px;
+--shift-text-on-input: 25px;
+--heading-color: rgb(50, 50, 50);
+--sub-heading-color: rgb(60, 60, 60);
+--heading-font-size: 30px;
+--sub-heading-font-size: 20px;
+--spacing: 2px;
+--button-background: rgba(33, 101, 255, 1);
+--button-hover: var(--color);
+--button-text-color: white;
+}
+
+/*-----------------------------------------
+For the Scroll bar
+-----------------------------------------*/
+/* width */
+*::-webkit-scrollbar {
+width: var(--scroll-bar-width);
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+background:  rgb(184, 184, 184) ;
+border-radius: var(--scroll-bar-width);
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+background:  hsl(0, 0%, 42%);
+border-radius: calc(var(--scroll-bar-width));
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+background: rgb(126, 149, 255);
+}
+
+
+body {
+margin: 0;
+height: 100%;
+width: 100%;
+}
+
+/*-----------------------------------------
+For waves and Background ( Waves are children element in "background" div)
+-----------------------------------------*/
+.waves {
+position: relative;
+width: 100%;
+height: var(--wave-height);
+/*Fix for safari gap*/
+min-height: var(--wave-height);
+max-height: 250px;
+position: fixed;
+bottom: 0;
+}
+
+.background {
+z-index: -1;
+}
+
+/* Animation */
+.parallax>use {
+animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+animation-delay: -2s;
+animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+animation-delay: -3s;
+animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+animation-delay: -4s;
+animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+animation-delay: -5s;
+animation-duration: 20s;
+}
+
+@keyframes move-forever {
+0% {
+transform: translate3d(-90px, 0, 0);
+}
+
+100% {
+transform: translate3d(85px, 0, 0);
+}
+}
+
+
+
+/*-------------- Wave End --------------*/
+
+/*-----------------------------------------
+Main sections ( Contains Sign Up section for Distributors and Others )
+-----------------------------------------*/
+
+.main {
+margin-top: var(--top-bottom-margin);
+margin-bottom: 150px;
+margin-left: var(--right-left-margin);
+margin-right: var(--right-left-margin);
+}
+
+/*Use this on 'a' href links*/
+.web-links {
+text-decoration: none;
+color: rgb(33, 101, 255);
+}
+
+/*-----------------------------------------
+Form Styling
+-----------------------------------------*/
+
+/*Form Labels*/
+.form-label {
+font-size: 11px;
+letter-spacing: 2px;
+transform: translateY(calc(-1*var(--shift-text-initially)));
+text-transform: uppercase;
+font-weight: 500;
+text-align: center;
+line-height: 1px;
+margin: 0 0 5px 0;
+color: var(--details-heading-color);
+font-family: "Poppins", sans-serif;
+z-index: -1;
+user-select: none;
+}
+
+/*List Selector*/
+.form-select-text {
+font-family: "Poppins", sans-serif;
+border-radius: 0;
+box-shadow: none;
+background-color: var(--transparent);
+outline: none;
+border: none;
+border-bottom: solid 1px var(--color);
+}
+
+.form-select-text:focus {
+font-family: "Poppins", sans-serif;
+border-radius: 0;
+border-bottom: solid 2px var(--color);
+box-shadow: none;
+background-color: var(--transparent);
+outline: none;
+}
+
+/*Form Input - Single Line*/
+.form-input-text {
+font-family: "Poppins", sans-serif;
+border-radius: 0;
+letter-spacing: calc(var(--spacing)/2);
+box-shadow: none;
+border: none;
+background-color: var(--transparent);
+outline: none;
+padding: 20px 0px 10px 10px;
+border-bottom: solid 1px var(--color);
+background-repeat: no-repeat;
+color: darken(var(--color), 20%);
+z-index: 9999;
+;
+}
+
+.form-input-text:focus {
+border-bottom: solid 2px var(--color);
+box-shadow: none;
+outline: none;
+background-color: var(--transparent);
+box-shadow: none;
+outline: none;
+background-position: 0 0;
+}
+
+/*--------------------------------------------------
+For Animation in Single Line Inputs
+--------------------------------------------------*/
+
+.form-input-text~.form-label {
+letter-spacing: 2px;
+}
+
+.form-input-text:focus~.form-label {
+transform: translateY(calc(-1*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
+transition: var(--transition);
+color: var(--color);
+}
+
+.form-input-text::-webkit-input-placeholder {
+color: var(--transparent);
+}
+
+.form-input-text:focus::-webkit-input-placeholder {
+color: var(--transparent);
+}
+
+.form-input-text:not(:placeholder-shown)~.form-label {
+transform: translateY(calc(-1*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
+transition: var(--transition);
+}
+
+
+/*--------------------------------------------------
+For Address Box
+--------------------------------------------------*/
+
+/*For Address Label - Because there are multiple line inputs but we are
+not taking paragraph input*/
+.address-label {
+transform: translateY(calc(-5.7*var(--shift-text-initially)));
+}
+
+.form-input-text:focus~.address-label {
+transform: translateY(calc(-5.7*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
+transition: var(--transition);
+color: var(--color);
+}
+
+.form-input-text:not(:placeholder-shown)~.address-label {
+transform: translateY(calc(-5.7*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
+transition: var(--transition);
+}
+
+.form-multiple-line-input-text {
+resize: none;
+}
+
+/*-----------------------------------------
+For description input only. DO NOT CHANGE OR USE ANYWHERE ELSE unless
+you are copying the description html element somewhere else for reuse
+-----------------------------------------*/
+.form-multiple-line-input-label {
+letter-spacing: 2px;
+font-size: 11px;
+transform: translateY(calc(-6.66*var(--shift-text-initially)));
+text-transform: uppercase;
+font-weight: 500;
+text-align: center;
+line-height: 1px;
+margin: 0 0 5px 0;
+color: var(--details-heading-color);
+font-family: "Poppins", sans-serif;
+z-index: -1;
+user-select: none;
+}
+
+/*--------------------------------------------------
+For Description Box
+--------------------------------------------------*/
+
+.form-multiple-line-input-text {
+letter-spacing: calc(var(--spacing)/2);
+}
+
+.form-multiple-line-input-text:focus+.form-multiple-line-input-label {
+transform: translateY(calc(-6.66*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
+transition: var(--transition);
+color: var(--color);
+}
+
+.form-multiple-line-input-text::-webkit-input-placeholder {
+color: var(--transparent);
+}
+
+.form-multiple-line-input-text:focus::-webkit-input-placeholder {
+color: var(--transparent);
+}
+
+.form-multiple-line-input-text:not(:placeholder-shown)+.form-multiple-line-input-label {
+transform: translateY(calc(-6.66*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
+transition: var(--transition);
+}
+
+/*--------------------------------------------------
+For Selection Box
+--------------------------------------------------*/
+.form-select-text:valid~.form-label {
+display: none;
+}
+
+/*--------------------------------------------------
+For Shifting up the text by an appropriate height to match the other settings
+--------------------------------------------------*/
+.shift-up {
+transform: translateY(calc(-1*var(--shift-text-initially)));
+}
+
+/*The user won't be able to select placeholder text*/
+*::-webkit-input-placeholder {
+user-select: none;
+}
+
+/*--------------------------------------------------
+Form Submit Button
+--------------------------------------------------*/
+.submit-button {
+background: var(--button-background);
+padding: 10px 20px;
+color: var(--button-text-color);
+font-size: large;
+border: none;
+border-radius: 100px;
+transition: var(--transition);
+}
+
+.submit-button:hover {
+background: var(--button-hover);
+}
+
+.submit-button:focus {
+outline: none;
+}
+
+/*--------------------------------------------------
+Heading and Subheading on the form box
+--------------------------------------------------*/
+
+.top {
+padding-bottom: 20px;
+}
+.heading {
+font-size: var(--heading-font-size);
+letter-spacing: var(--spacing);
+text-align: center;
+text-transform: uppercase;
+color: var(--heading-color);
+}
+
+.sub-heading {
+font-size: var(--sub-heading-font-size);
+letter-spacing: var(--spacing);
+text-align: center;
+text-transform: uppercase;
+color: var(--question-color);
+}
+
+/*This is the sign-up section switch*/
+.business-page-distributor-page-switch {
+letter-spacing: calc(var(--spacing)/2);
+text-align: center;
+text-transform: uppercase;
+color: rgba(33, 101, 255, 0.8);
+background-color: white;
+border: none;
+}
+
+.business-page-distributor-page-switch:hover {
+outline: none;
+}
+
+/*hiding the other section. Use Switch to bring it back and hide distributor section*/
+#for-others {
+display: none;
+}
+
+/*The element with is class has to appear when password an re-enter passwords do not match*/
+.warning {
+display: none;
+}
