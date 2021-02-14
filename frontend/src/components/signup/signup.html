@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Login | Karya-Anti</title>
+    <title>Sign Up | Karya-Anti</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -13,343 +13,11 @@
     <link href="" rel="icon">
     <link href="" rel="Logo-icon">
 
-
+    <!-------Bootstrap Library------->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-----------Bootstrap Icons------------>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
-    <style>
-        /*---------------------------------------------
-                   Wave css
-        --------------------------------------------*/
-
-        /* width */
-        *::-webkit-scrollbar {
-            width: var(--scroll-bar-width);
-        }
-
-        /* Track */
-        *::-webkit-scrollbar-track {
-            background: hsl(0, 0%, 42%);
-            border-radius: var(--scroll-bar-width);
-        }
-
-        /* Handle */
-        *::-webkit-scrollbar-thumb {
-            background: rgb(184, 184, 184);
-            border-radius: calc(var(--scroll-bar-width));
-        }
-
-        /* Handle on hover */
-        *::-webkit-scrollbar-thumb:hover {
-            background: rgb(126, 149, 255);
-        }
-
-        :root {
-            --wave-height: 12%;
-            --top-bottom-margin: 5%;
-            --right-left-margin: 5%;
-            --details-heading-color: #aaaaaa;
-            --transparent: rgba(0, 0, 0, 0);
-            --scroll-bar-width: 4px;
-            --color: #1abc9c;
-            --transition: 0.2s ease-in-out;
-            --shift-text-initially: 25px;
-            --shift-text-on-input: 25px;
-            --heading-color: rgb(50, 50, 50);
-            --sub-heading-color: rgb(60, 60, 60);
-            --heading-font-size: 30px;
-            --sub-heading-font-size: 20px;
-            --spacing: 2px;
-        }
-
-        body {
-            margin: 0;
-            height: 100%;
-            width: 100%;
-        }
-
-        .waves {
-            position: relative;
-            width: 100%;
-            height: var(--wave-height);
-            /*Fix for safari gap*/
-            min-height: var(--wave-height);
-            max-height: 250px;
-            position: fixed;
-            bottom: 0;
-        }
-
-        .background {
-            z-index: -1;
-        }
-
-        /* Animation */
-        .parallax>use {
-            animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
-        }
-
-        .parallax>use:nth-child(1) {
-            animation-delay: -2s;
-            animation-duration: 7s;
-        }
-
-        .parallax>use:nth-child(2) {
-            animation-delay: -3s;
-            animation-duration: 10s;
-        }
-
-        .parallax>use:nth-child(3) {
-            animation-delay: -4s;
-            animation-duration: 13s;
-        }
-
-        .parallax>use:nth-child(4) {
-            animation-delay: -5s;
-            animation-duration: 20s;
-        }
-
-        @keyframes move-forever {
-            0% {
-                transform: translate3d(-90px, 0, 0);
-            }
-
-            100% {
-                transform: translate3d(85px, 0, 0);
-            }
-        }
-
-        .web-links {
-            text-decoration: none;
-            color: rgb(33, 101, 255);
-        }
-
-        /*-------------- Wave End --------------*/
-
-        /*-------------- Main --------------*/
-
-        .main {
-            margin-top: var(--top-bottom-margin);
-            margin-bottom: 150px;
-            margin-left: var(--right-left-margin);
-            margin-right: var(--right-left-margin);
-        }
-
-        .form-label {
-            font-size: 11px;
-            letter-spacing: 2px;
-            transform: translateY(calc(-1*var(--shift-text-initially)));
-            text-transform: uppercase;
-            font-weight: 500;
-            text-align: center;
-            line-height: 1px;
-            margin: 0 0 5px 0;
-            color: var(--details-heading-color);
-            font-family: "Poppins", sans-serif;
-            z-index: -1;
-            user-select: none;
-        }
-
-
-        .form-select-text {
-            font-family: "Poppins", sans-serif;
-            border-radius: 0;
-            box-shadow: none;
-            background-color: var(--transparent);
-            outline: none;
-            border: none;
-            border-bottom: solid 1px var(--color);
-        }
-
-        .form-select-text:focus {
-            font-family: "Poppins", sans-serif;
-            border-radius: 0;
-            border-bottom: solid 2px var(--color);
-            box-shadow: none;
-            background-color: var(--transparent);
-            outline: none;
-        }
-
-        .form-input-text {
-            font-family: "Poppins", sans-serif;
-            border-radius: 0;
-            letter-spacing: calc(var(--spacing)/2);
-            box-shadow: none;
-            border: none;
-            background-color: var(--transparent);
-            outline: none;
-            padding: 20px 0px 10px 10px;
-            border-bottom: solid 1px var(--color);
-            background-repeat: no-repeat;
-            color: darken(var(--color), 20%);
-            z-index: 9999;
-            ;
-        }
-
-        .form-input-text:focus {
-            border-bottom: solid 2px var(--color);
-            box-shadow: none;
-            outline: none;
-            background-color: var(--transparent);
-            box-shadow: none;
-            outline: none;
-            background-position: 0 0;
-        }
-
-        .submit-button {
-            z-index: 9999;
-            color: white;
-        }
-
-        /*--------------------------------------------------
-        For Animation in Single Line Inputs
-        --------------------------------------------------*/
-
-        .form-input-text~.form-label {
-            letter-spacing: 2px;
-        }
-
-        .form-input-text:focus~.form-label {
-            transform: translateY(calc(-1*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
-            transition: var(--transition);
-            color: var(--color);
-        }
-
-        .form-input-text::-webkit-input-placeholder {
-            color: var(--transparent);
-        }
-
-        .form-input-text:focus::-webkit-input-placeholder {
-            color: var(--transparent);
-        }
-
-        .form-input-text:not(:placeholder-shown)~.form-label {
-            transform: translateY(calc(-1*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
-            transition: var(--transition);
-        }
-
-        .form-multiple-line-input-label {
-            letter-spacing: 2px;
-            font-size: 11px;
-            transform: translateY(calc(-6.66*var(--shift-text-initially)));
-            text-transform: uppercase;
-            font-weight: 500;
-            text-align: center;
-            line-height: 1px;
-            margin: 0 0 5px 0;
-            color: var(--details-heading-color);
-            font-family: "Poppins", sans-serif;
-            z-index: -1;
-            user-select: none;
-        }
-
-        .address-label {
-            transform: translateY(calc(-5.7*var(--shift-text-initially)));
-        }
-
-        /*--------------------------------------------------
-        For Address Box
-        --------------------------------------------------*/
-        .form-input-text:focus~.address-label {
-            transform: translateY(calc(-5.7*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
-            transition: var(--transition);
-            color: var(--color);
-        }
-
-        .form-input-text:not(:placeholder-shown)~.address-label {
-            transform: translateY(calc(-5.7*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
-            transition: var(--transition);
-        }
-
-        .form-multiple-line-input-text {
-            resize: none;
-        }
-
-        /*--------------------------------------------------
-              For Description Box
-        --------------------------------------------------*/
-
-        .form-multiple-line-input-text {
-            letter-spacing: calc(var(--spacing)/2);
-        }
-
-        .form-multiple-line-input-text:focus+.form-multiple-line-input-label {
-            transform: translateY(calc(-6.66*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
-            transition: var(--transition);
-            color: var(--color);
-        }
-
-        .form-multiple-line-input-text::-webkit-input-placeholder {
-            color: var(--transparent);
-        }
-
-        .form-multiple-line-input-text:focus::-webkit-input-placeholder {
-            color: var(--transparent);
-        }
-
-        .form-multiple-line-input-text:not(:placeholder-shown)+.form-multiple-line-input-label {
-            transform: translateY(calc(-6.66*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
-            transition: var(--transition);
-        }
-
-        /*--------------------------------------------------
-        For Selection Box
-        --------------------------------------------------*/
-        .form-select-text:valid~.form-label {
-            display: none;
-        }
-
-        /*--------------------------------------------------
-        For Shifting up the text by an appropriate height to match the other settings
-        --------------------------------------------------*/
-        .shift-up {
-            transform: translateY(calc(-1*var(--shift-text-initially)));
-        }
-
-        *::-webkit-input-placeholder {
-            user-select: none;
-        }
-
-
-        .heading {
-            font-size: var(--heading-font-size);
-            letter-spacing: var(--spacing);
-            text-align: center;
-            text-transform: uppercase;
-            color: var(--heading-color);
-        }
-
-        .sub-heading {
-            font-size: var(--sub-heading-font-size);
-            letter-spacing: var(--spacing);
-            text-align: center;
-            text-transform: uppercase;
-            color: var(--question-color);
-        }
-
-        .business-page-distributor-page-switch {
-            letter-spacing: calc(var(--spacing)/2);
-            text-align: center;
-            text-transform: uppercase;
-            color: rgba(33, 101, 255, 0.8);
-            background-color: white;
-            border: none;
-        }
-
-        .business-page-distributor-page-switch:hover {
-            outline: none;
-        }
-
-        #for-others {
-            display: none;
-        }
-
-        .warning {
-            display: none;
-        }
-    </style>
+        <link rel="stylesheet" href="./signup.css">
 </head>
 
 <body>
@@ -382,58 +50,74 @@
                     for Distributors
                 </h1>
                 <h2 class="sub-heading">
-                    Are you from a Business or an Industry?<br> <button class="business-page-distributor-page-switch" onclick="switchSignInPage()">Head
-                        to your
-                        Sign-up page</button>
+                    Are you from a Business or an Industry?<br>
+                    <button class="business-page-distributor-page-switch" onclick="switchSignInPage()">
+                        Head to yourSign-up page
+                    </button>
                 </h2>
             </div>
+
+
             <div class="container">
                 <form>
+
+
                     <div class="form-group">
                         <input type="text" class="form-control form-input-text" id="distributor_name"
                             aria-describedby="emailHelp" placeholder="Name of the Distributorship" required>
                         <label class="form-label" for="Distributorship">Distributorship</label>
-
                         <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                         else.</small> -->
                     </div>
-                    <div class="form-group">
 
+
+                    <div class="form-group">
                         <input type="email" class="form-control form-input-text" id="distributor_email"
                             placeholder="Enter Email Address" required>
                         <label class="form-label" for="inputZip">E-mail Address</label>
                     </div>
+
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
 
                             <input type="password" class="form-control form-input-text" id="distributor_password"
                                 placeholder="Password">
                             <label class="form-label" for="password">Password</label>
-                            <small id="password-mismatch" class="form-text text-muted shift-up warning" id="distributor_warning">The Passwords entered do
+                            <!--this warning appears if password re entered do not match. Front end Part-->
+                            <small id="password-mismatch" class="form-text text-muted shift-up warning"
+                                id="distributor_warning">The Passwords entered do
                                 not
                                 match</small>
                         </div>
-                        <div class="form-group col-md-6">
 
-                            <input type="password" class="form-control form-input-text" id="distributor_password_reenter"
-                                placeholder="Re-Enter Password" required>
+                        <div class="form-group col-md-6">
+                            <input type="password" class="form-control form-input-text"
+                                id="distributor_password_reenter" placeholder="Re-Enter Password" required>
                             <label class="form-label" for="re-enter password">Re-Enter Password</label>
                         </div>
-
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
 
+
+                    <div class="form-row">
+                    <!--Check if the input is actually a number. Front end part. Complete this. Not yet completed-->
+                        <div class="form-group col-md-6">
                             <input type="text" class="form-control form-input-text" id="distributor_phone"
                                 placeholder="Contact Number" required>
                             <label class="form-label" for="contact-number">Contact Number</label>
                         </div>
-                        <div class="form-group col-md-6">
 
-                            <input type="text" class="form-control form-input-text" id="distributor_brand" placeholder="Brand" required>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control form-input-text" id="distributor_brand"
+                                placeholder="Brand" required>
                             <label class="form-label" for="brand">Brand</label>
                         </div>
                     </div>
+
+                    <!--------------------------Address Multiple line inputs-------------------------->
+                    <!--We have to manually add text input from these 4 lines of 
+                        input for that it can easily be interpreted and used by server -->
+
                     <div class="form-group">
                         <input type="text" class="form-control form-input-text" id="distributor_address_line1"
                             placeholder="Address Line 1" required>
@@ -445,12 +129,16 @@
                             placeholder="Address Line 4">
                         <label class="form-label address-label" for="inputAddress">Address</label>
                     </div>
+
+
                     <div class="form-row">
+
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control form-input-text" id="distributor_city"
                                 placeholder="Enter City" required>
                             <label class="form-label" class="form-label" for="inputCity">City</label>
                         </div>
+
                         <div class="form-group col-md-4">
                             <select id="distributor_state" class="form-control form-select-text" required>
                                 <option></option>
@@ -492,19 +180,26 @@
                             </select>
                             <label class="form-label" for="inputState">State</label>
                         </div>
+
+
                         <div class="form-group col-md-2">
                             <input type="text" class="form-control form-input-text" id="distributor_zipcode"
                                 placeholder="Enter Zip Code">
                             <label class="form-label" for="inputZip">Zip Code</label>
                         </div>
-                        <div class="form-group col-12">
-                            <textarea class="form-control form-input-text form-multiple-line-input-text" name="message"
-                                id="distributor_description" rows="6" data-rule="required" data-msg=""
-                                placeholder="Please write something to describe yourself to the buyers"></textarea>
-                            <label class="form-multiple-line-input-label" for="inputZip" required>Description</label>
-                        </div>
+
                     </div>
-                    <button type="submit" class="btn btn-primary submit-button" id="distributor_signup">Sign Up</button>
+
+
+                    <div class="form-group">
+                        <textarea class="form-control form-input-text form-multiple-line-input-text" name="message"
+                            id="distributor_description" rows="6" data-rule="required" data-msg=""
+                            placeholder="Please write something to describe yourself to the buyers"></textarea>
+                        <label class="form-multiple-line-input-label" for="inputZip" required>Description</label>
+                    </div>
+
+                    <!--Text Input Ends-->
+                    <button type="submit" class="submit-button" id="distributor_signup">Sign Up</button>
                 </form>
             </div>
         </div>
@@ -514,19 +209,25 @@
         <!-------------------------------------------------------------FOR SYSTEMS OTHER THAN DISTRIBUTIONS-------------------------------------------------------->
         <div id="for-others">
             <div class="top">
+                <!--------------------------------HEADING OF THE SIGN UP PAGE.---------------------------------->
                 <h1 class="heading">
-                    for BUSINESSes / INDUSTRies
+                    for BUSINESSES / INDUSTRIES
                 </h1>
                 <h2 class="sub-heading">
-                    Are you a distributor?<br> <button class="business-page-distributor-page-switch" onclick="switchSignInPage()">Head to the
-                        Distributor
-                        Sign-up page</button>
+                    Are you a distributor?<br>
+                    <!--------------------------------Button for changing the Sign Up page for Distributor and Businesses---------------------------------->
+                    <button class="business-page-distributor-page-switch" onclick="switchSignInPage()">
+                        Head to the Distributor Sign-up page
+                    </button>
+                    <!--------------------------------Buttons Ends-------------------------------->
                 </h2>
             </div>
 
+            <!--------------------------------Form Container-------------------------------->
             <div class="container">
-                <form>
-                    <div class="form-group"><!-------------------------------bni stands for business and industries. see just below in the tag name------------------------>
+
+                    <div class="form-group">
+                        <!-------------------------------bni stands for business and industries. see just below in the tag name------------------------>
                         <input type="text" class="form-control form-input-text" id="bni_name"
                             aria-describedby="emailHelp" placeholder="Name of the Distributorship" required>
                         <label class="form-label" for="Distributorship">NAME OF YOUR BUSINESS SHOP / INDUSTRY</label>
@@ -534,19 +235,24 @@
                         <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                         else.</small> -->
                     </div>
-                    <div class="form-group">
 
+
+                    <div class="form-group">
                         <input type="email" class="form-control form-input-text" id="bni_email"
                             placeholder="Enter Email Address" required>
                         <label class="form-label" for="inputZip">E-mail Address</label>
                     </div>
+
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
 
                             <input type="password" class="form-control form-input-text" id="bni_password"
                                 placeholder="Password" required>
                             <label class="form-label" for="password">Password</label>
-                            <small id="password-mismatch" class="form-text text-muted shift-up warning" id="bni_warning">The Passwords entered do
+                            <!--this warning appears if password re entered do not match. Front end Part-->
+                            <small id="password-mismatch" class="form-text text-muted shift-up warning"
+                                id="bni_warning">The Passwords entered do
                                 not
                                 match</small>
                         </div>
@@ -558,14 +264,19 @@
                         </div>
 
                     </div>
+
+                <!--Check if the input is actually a number. Front end part. Complete this. Not yet completed-->
                     <div class="form-row">
                         <div class="form-group col-md-6">
-
                             <input type="text" class="form-control form-input-text" id="bni_phone"
                                 placeholder="Contact Number" required>
                             <label class="form-label" for="contact-number">Office Contact Number</label>
                         </div>
                     </div>
+
+                    <!--------------------------Address Multiple line inputs-------------------------->
+                    <!--We have to manually add text input from these 4 lines of 
+                        input for that it can easily be interpreted and used by server -->
                     <div class="form-group">
                         <input type="text" class="form-control form-input-text" id="bni_address_line1"
                             placeholder="Address Line 1" required>
@@ -577,6 +288,8 @@
                             placeholder="Address Line 4">
                         <label class="form-label address-label" for="inputAddress">Address</label>
                     </div>
+
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control form-input-text" id="bni_city"
@@ -624,13 +337,19 @@
                             </select>
                             <label class="form-label" for="inputState">State</label>
                         </div>
+
+
                         <div class="form-group col-md-2">
                             <input type="text" class="form-control form-input-text" id="bni_zipcode"
                                 placeholder="Enter Zip Code">
                             <label class="form-label" for="inputZip">Zip Code</label>
                         </div>
+
+
                     </div>
-                    <button type="submit" class="btn btn-primary submit-button" id="bni_signup">Sign up</button>
+                    <!--Text Input Ends-->
+                    <button type="submit" class="submit-button" id="bni_signup">Sign Up</button>
+
                 </form>
             </div>
         </div>
@@ -638,10 +357,24 @@
 
 
     <script>
+
+        /**
+         * Already one of the distributor's or other's sign up section has to be hidden
+         * using css styling. 
+         * This functions un-hides the section that is hidden and hides the one that can be seen
+         * at the moment
+         */
         function switchSignInPage() {
+            //selecting distributors sign up section
             var distributors_sign_up_page = document.getElementById("for-distributor");
+
+            //selecting others sign up section
             var others_sign_up_page = document.getElementById("for-others");
 
+
+            //here we are changing css styling
+            //css 'block' in display means the section can be see
+            //css 'none'  in display means the section is hidden 
             if (distributors_sign_up_page.style.display === "none") {
                 distributors_sign_up_page.style.display = "block";
                 others_sign_up_page.style.display = "none";
