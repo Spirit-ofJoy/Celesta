@@ -3,7 +3,7 @@ import { Component } from 'react';
 
 import './Login.css';
 
-class Login  extends Component {
+class Login extends Component {
 
     processLogin = () => {
         console.log(document.getElementById('uname-fld').value);

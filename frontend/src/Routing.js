@@ -5,6 +5,8 @@ import { SwitchTransition, CSSTransition, TransitionGroup } from "react-transiti
 import Home from './components/home/Home';
 import Login from './components/login/Login';
 import Profile from './components/profile/Profile';
+import Trader from './components/the_trader/Dashboard';
+import Distributor from './components/the_distributor/Distributorboard';
 import './styles/Routing.css';
 
 //Utility class to handle Routing on Web-app
@@ -14,9 +16,6 @@ export default class Routing extends Component {
         return (
             <BrowserRouter>
                 <Route render={({ location }) => (
-
-                    <TransitionGroup>
-                        <CSSTransition key={location.key} timeout={400} classNames="route-fade">
 
                             <Switch classNames="route-page" location={location}>
 
@@ -32,10 +31,15 @@ export default class Routing extends Component {
                                     <Profile distributor='distrib_id'/>
                                 </Route>
 
-                            </Switch>
+                                <Route path="/trader">
+                                    <Trader location={location}/>
+                                </Route>
 
-                        </CSSTransition>
-                    </TransitionGroup>
+                                <Route path="/distributor">
+                                    <Distributor location={location}/>
+                                </Route>
+
+                            </Switch>
 
                 )} />
             </BrowserRouter>

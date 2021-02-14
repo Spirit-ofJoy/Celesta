@@ -1,0 +1,12 @@
+#distributor-details-container.h {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#distributor-details-container {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
