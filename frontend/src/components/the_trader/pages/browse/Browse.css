@@ -1,3 +1,9 @@
 .card {
     border-radius: 10px;
 }
+
+#trader-browse-container {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

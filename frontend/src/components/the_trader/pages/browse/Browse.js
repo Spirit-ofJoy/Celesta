@@ -1,15 +1,41 @@
-import React, { Component } from 'react';
+import React from 'react';
 
+import BrowseList from './BrowseList';
 import './Browse.css';
 
 const Browse = (props) => {
 
     return (
         <div className="card" id="trader-browse-container">
-            <h1>Browse</h1>
+            <h1 style={{margin:'30px'}}>Browse</h1>
+            <BrowseList data={data}/>
         </div>
 
     ); 
+}
+
+let data = {
+    item: {
+        name: 'Coca-Cola',
+        description: 'Coca-Cola tu, Shola Shola tu',
+        brand: 'Musk-TWeets-Co.'
+    },
+    distribs: [
+        {
+            id:'distrib_id1',
+            location:'map-api-location2',
+            name:'Chunni-Lal',
+            cost: 40,
+            carton: 50
+        },
+        {
+            id:'distrib_id2',
+            location:'map-api-location1',
+            name:'Chanda Mama durr ke',
+            cost: 7,
+            carton: 10
+        }
+    ]
 }
 
 export default Browse;
