@@ -1,0 +1,67 @@
+{
+    "table":{
+        "login":"login",
+        "distributors":"distributors",
+        "trader":"trader",
+        "brand":"brand",
+        "items":"items",
+        "tags":"tags",
+        "orders":"orders",
+        "reviews":"reviews"
+    },
+    "login": {
+        "login_id":"login_id",
+        "password":"password",
+        "email":"email"
+    },
+    "trader": {
+        "trader_id":"trader_id",
+        "email":"email",
+        "Name":"Name",
+        "phone":"phone",
+        "address":"address",
+        "location":"location",
+        "to_do":"to_do"
+    },
+    "distributors":{
+        "distributor_id":"distributor_id",
+        "email":"email",
+        "phone":"phone",
+        "address":"address",
+        "location":"location",
+        "name":"name",
+        "description":"description",
+        "brand":"brand",
+        "items":"items"
+    },
+    "reviews":{
+        "review_id":"review_id",
+        "review":"review",
+        "stars":"stars",
+        "review_by":"review_by",
+        "distributor":"distributor"
+    },
+    "orders":{
+        "number":"number",
+        "distributor":"distributor",
+        "item":"item",
+        "ordered_on":"ordered_on",
+        "buyer":"buyer",
+        "order_id":"order_id"
+    },
+    "tags":{
+        "tags":"tags",
+        "item_id":"item_id"
+    },
+    "brand":{
+        "name":"name"
+    },
+    "items":{
+        "item_id":"item_id",
+        "description":"description",
+        "tags":"tags",
+        "brand":"brand",
+        "name":"name"
+    }
+
+}
