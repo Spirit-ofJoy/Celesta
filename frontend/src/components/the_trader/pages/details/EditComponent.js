@@ -5,9 +5,7 @@ const EditComponent = (props) => {
     let allowEdit = false;
     let input;
     const processEdit = () => {
-
         allowEdit=(!allowEdit); 
-        console.log(allowEdit);
         if(allowEdit){ input.disabled=false; }
         if(!allowEdit){ input.disabled=true; }
     }

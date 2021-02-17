@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import EditProfile from './pages/profile/Profile';
 import AddItem from './pages/items/Items';
-import ChangePrice from './pages/price/Price';
+import Catalogue from './pages/price/Price';
 import Welcome from './Welcome';
 import './Distributorboard.css';
 
@@ -26,8 +26,8 @@ class Distributorboard extends Component {
             <div id="distributor-page-container">
                 <div className="distributor-navbar">
                     <NavLink exact to="/distributor/profile" activeClassName="active-clicked">Edit Profile Details</NavLink>
-                    <NavLink exact to="/distributor/items" activeClassName="active-clicked">Add Items to my selection</NavLink>
-                    <NavLink exact to="/distributor/price" activeClassName="active-clicked">Modify Price</NavLink>
+                    <NavLink exact to="/distributor/items" activeClassName="active-clicked">Add Items to our selection</NavLink>
+                    <NavLink exact to="/distributor/catalogue" activeClassName="active-clicked">Modify my Catalogue</NavLink>
                 </div>
 
                 <div className="distributor-main-container" >
@@ -46,8 +46,8 @@ class Distributorboard extends Component {
                                 <motion.div initial="out" animate="in" exit="exit" variants={distributorPageVariants} transition={distributorPageTransitions}> <AddItem /> </motion.div>
                             </Route> 
 
-                            <Route path="/distributor/price" >
-                                <motion.div initial="out" animate="in" exit="exit" variants={distributorPageVariants} transition={distributorPageTransitions}> <ChangePrice /> </motion.div>
+                            <Route path="/distributor/catalogue" >
+                                <motion.div initial="out" animate="in" exit="exit" variants={distributorPageVariants} transition={distributorPageTransitions}> <Catalogue /> </motion.div>
                             </Route> 
                             
                         </Switch>
