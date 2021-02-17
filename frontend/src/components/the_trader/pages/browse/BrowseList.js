@@ -10,7 +10,7 @@ const BrowseList = (props) => {
                 
                 {
                     props.data.distribs.map((itemDetails, i) => {
-                        /*Allows for dynamic number of choices*/
+                        
                         return (
                             <ItemCard 
                                 key={i /*For React to identify each item-card through key*/}

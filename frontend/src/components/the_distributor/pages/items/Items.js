@@ -5,9 +5,9 @@ const Items = (props) => {
     return (
         <div className="card" style={{paddingBottom:'50px'}}>
             <h1 style={{margin:'30px'}}>Add Items to Selection</h1>
-            <hr style= { { width: '90%', marginLeft: '5%', height: '3px', color: 'black'} } />
+            <hr style= { { width: '100%', height: '3px', color: 'black'} } />
             
-            <div style={{ width: '80%' }}>
+            <div style={{ width: '80%', paddingLeft: '15%' }}>
                 <div className="input-group mb-3">
                     <span className="input-group-text" id="basic-addon1">Item Name:</span>
                     <input type="text" className="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1" />
