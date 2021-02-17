@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Browse from './pages/browse/Browse';
 import Details from './pages/details/Details';
 import PreviousOrders from './pages/prev-orders/PreviousOrders';
-import ToDoList from './pages/to-do/ToDo';
+import ToDoList from './pages/to-do/List';
 import Welcome from './Welcome';
 import './Dashboard.css';
 
@@ -16,14 +16,14 @@ class Dashboard extends Component {
         super();
 
         this.state = {
-            
+
         }
     }
 
     render() {
 
         return (
-            
+
             <div id="trader-page-container">
                 <div className="trader-navbar">
                     <NavLink exact to="/trader/details" activeClassName="active-clicked">My Details</NavLink>
@@ -38,11 +38,11 @@ class Dashboard extends Component {
 
                             <Route exact path="/trader" >
                                 <motion.div initial="out" animate="in" exit="exit" variants={traderPageVariants} transition={traderPageTransitions}> <Welcome /> </motion.div>
-                            </Route> 
+                            </Route>
 
                             <Route path="/trader/details" >
                                 <motion.div initial="out" animate="in" exit="exit" variants={traderPageVariants} transition={traderPageTransitions}> <Details /> </motion.div>
-                            </Route> 
+                            </Route>
 
                             <Route path="/trader/browse" >
                                 <motion.div initial="out" animate="in" exit="exit" variants={traderPageVariants} transition={traderPageTransitions}> <Browse /> </motion.div>
@@ -55,10 +55,10 @@ class Dashboard extends Component {
                             <Route path="/trader/toDo" >
                                 <motion.div initial="out" animate="in" exit="exit" variants={traderPageVariants} transition={traderPageTransitions}> <ToDoList /> </motion.div>
                             </Route>
-                            
+
                         </Switch>
                     </AnimatePresence>
-                    
+
                 </div>
             </div>
         );
@@ -75,7 +75,7 @@ const traderPageVariants = {
         opacity: 0,
         x: "-100vw",
         scale: 0.8
-    }, 
+    },
     exit: {
         opacity: 0,
         x: "100vw",

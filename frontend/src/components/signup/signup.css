@@ -4,7 +4,7 @@ Wave css
 
 /*----------------------------------------------
 Root Element. Copy this to every css part if you are splitting the css for
-any component  
+any component
 ---------------------------------------------*/
 :root {
 --wave-height: 12%;
@@ -374,11 +374,6 @@ border: none;
 
 .business-page-distributor-page-switch:hover {
 outline: none;
-}
-
-/*hiding the other section. Use Switch to bring it back and hide distributor section*/
-#for-others {
-display: none;
 }
 
 /*The element with is class has to appear when password an re-enter passwords do not match*/
