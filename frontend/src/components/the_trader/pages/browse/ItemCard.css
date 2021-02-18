@@ -5,6 +5,7 @@
 .browse-list-item-card {
   background-color: white;
   box-shadow: 0 5px 12px 2px rgb(192, 192, 192);
+  margin-bottom:30px;
 }
 
 .browse-list-item-card-header-outer-div {
