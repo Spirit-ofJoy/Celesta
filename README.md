@@ -6,7 +6,9 @@
 <p align = center><img src = "https://github.com/Spirit-ofJoy/Celesta/blob/master/docs/readme-images/logo.jpg"></p>
 <br>
 <p align = center><font face="Helvetica" color="Red">"Bridging the gap between Traders and Distributors"</font></p>
-
+<a href="https://github.com/Spirit-ofJoy/Celesta/blob/master/LICENSE" target="_blank">
+        <p align = center><img src = "https://img.shields.io/badge/License-MIT-green"></p>
+</a>
 <!-- Table of contents -->
 ## Table of contents
 <UL>
