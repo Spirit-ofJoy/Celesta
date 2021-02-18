@@ -211,11 +211,22 @@
 
 .login-main-linking {
     padding: 2%;
+    border:none;
+    outline:none;
 }
+
 #Signup-linking {
     text-decoration: none;
     color: #050505;
+    border:none;
+    outline:none;
 }
+
+#Signup-linking:focus{
+    outline: none;
+}
+
+
 .login-main-linking:hover {
     background-color: rgba(255, 0, 127, 0.5);
     transition: 1.5s;
