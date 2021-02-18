@@ -232,3 +232,10 @@
     transition: 1.5s;
 }
 
+.heading-name-app {
+    letter-spacing: 4px;
+}
+
+.tagline-name-app {
+    letter-spacing: 2px;
+}

@@ -18,8 +18,8 @@ class Login extends Component {
                     <div className="login-name-and-waves">
                         <div className="login-inner-header" id="login-flexbx">
                             <div className="login-name"><br /><br /><br /><br /><br /><br /><br />
-                                <h1>KRAYA-ANTI</h1><br />
-                                <h2>BECAUSE EVERYTHING HAS A <br />NEW BEGINNING</h2>
+                                <h1 className="heading-name-app">KRAYA-ANTI</h1><br />
+                                <h2 className="tagline-name-app">BECAUSE EVERYTHING HAS A <br />NEW BEGINNING</h2>
                             </div>
                         </div>
                         {/*Waves Container*/}
