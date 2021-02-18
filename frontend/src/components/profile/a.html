@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Login | Karya-Anti</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="" rel="icon">
+    <link href="" rel="Logo-icon">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-----------Bootstrap Icons------------>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <style>
+        /*---------------------------------------------
+                   Wave css
+    --------------------------------------------*/
+
+        /* width */
+        *::-webkit-scrollbar {
+            width: var(--scroll-bar-width);
+        }
+
+        /* Track */
+        *::-webkit-scrollbar-track {
+            background: hsl(0, 0%, 42%);
+            border-radius: var(--scroll-bar-width);
+        }
+
+        /* Handle */
+        *::-webkit-scrollbar-thumb {
+            background: rgb(184, 184, 184);
+            border-radius: calc(var(--scroll-bar-width));
+        }
+
+        /* Handle on hover */
+        *::-webkit-scrollbar-thumb:hover {
+            background: rgb(126, 149, 255);
+        }
+
+        :root {
+            --wave-height: 12%;
+            --top-bottom-margin: 5%;
+            --right-left-margin: 5%;
+            --details-heading-color: #aaaaaa;
+            --transparent: rgba(0, 0, 0, 0);
+            --scroll-bar-width: 4px;
+            --color: #1abc9c;
+        }
+
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .waves {
+            position: relative;
+            width: 100%;
+            height: var(--wave-height);
+            /*Fix for safari gap*/
+            min-height: var(--wave-height);
+            max-height: 250px;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .background {
+            z-index: -1111;
+        }
+
+        /* Animation */
+        .parallax>use {
+            animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+        }
+
+        .parallax>use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+        }
+
+        .parallax>use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+        }
+
+        .parallax>use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+        }
+
+        .parallax>use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+        }
+
+        @keyframes move-forever {
+            0% {
+                transform: translate3d(-90px, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(85px, 0, 0);
+            }
+        }
+
+        .web-links {
+            text-decoration: none;
+            color: rgb(33, 101, 255);
+        }
+
+        /*-------------- Wave End --------------*/
+
+        /*-------------- Main --------------*/
+
+        .main {
+            margin-top: var(--top-bottom-margin);
+            margin-bottom: 150px;
+            margin-left: var(--right-left-margin);
+            margin-right: var(--right-left-margin);
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        /**
+      * Add a transition to the label and input.
+      * I'm not even sure that touch-action: manipulation works on
+      * inputs, but hey, it's new and cool and could remove the
+      * pesky delay.
+      */
+        label,
+        input,
+        textarea {
+            transition: all 0.2s;
+            touch-action: manipulation;
+            transform-origin: left bottom;
+        }
+
+        input,
+        textarea {
+            font-size: 1.5em;
+            border: 0;
+            border-bottom: 1px solid #ccc;
+            font-family: inherit;
+            -webkit-appearance: none;
+            border-radius: 0;
+            padding: 0;
+            cursor: text;
+        }
+
+        input:focus,
+        ,
+        textarea:focus {
+            outline: 0;
+            border-bottom: 1px solid #666;
+        }
+
+        label {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /**
+      * Translate down and scale the label up to cover the placeholder,
+      * when following an input (with placeholder-shown support).
+      * Also make sure the label is only on one row, at max 2/3rds of the
+      * field—to make sure it scales properly and doesn't wrap.
+      */
+        input:placeholder-shown+label,
+        textarea:placeholder-shown+label {
+            cursor: text;
+            max-width: 66.66%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transform: translate(0, 2.125rem) scale(1.5);
+        }
+
+        /**
+      * By default, the placeholder should be transparent. Also, it should
+      * inherit the transition.
+      */
+        ::-webkit-input-placeholder {
+            opacity: 0;
+            transition: inherit;
+        }
+
+        /**
+      * Show the placeholder when the input is focused.
+      */
+        input:focus::-webkit-input-placeholder,
+        textarea:focus::-webkit-input-placeholder {
+            opacity: 1;
+        }
+
+        /**
+      * When the element is focused, remove the label transform.
+      * Also, do this when the placeholder is _not_ shown, i.e. when
+      * there's something in the input at all.
+      */
+        input:not(:placeholder-shown)+label,
+        input:focus+label,
+        textarea:not(:placeholder-shown)+label,
+        textarea:focus+label {
+            transform: translate(0, 0) scale(1);
+            cursor: pointer;
+        }
+
+        /* Show input clear on filled input items */
+        input:not(:placeholder-shown)+label+.field__clear,
+        textarea:not(:placeholder-shown)+label+.field__clear {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Waves Container-->
+    <div class="background">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="4" y="0" fill="rgba(36, 101, 255,0.7)" />
+                <use xlink:href="#gentle-wave" x="4" y="3" fill="rgba(36, 101, 255,0.5)" />
+                <use xlink:href="#gentle-wave" x="4" y="5" fill="rgba(36, 101, 255,0.3)" />
+                <use xlink:href="#gentle-wave" x="4" y="7" fill="rgba(36, 101, 255,1)" />
+            </g>
+        </svg>
+    </div>
+    <!--Waves end-->
+
+
+    <main class="main">
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <label class="form-label" for="Distributorship">Distributorship</label>
+                    <input type="text" class="form-control form-input-text" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Name of the Distributorship">
+                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small> -->
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="inputZip">E-mail Address</label>
+                    <input type="email" class="form-control form-input-text" id="distributor-email"
+                        placeholder="Enter Email Address">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+
+                        <input type="password" class="form-input-text" id="inputEmail4"
+                            placeholder="Password">
+                        <label class="" for="password">Password</label>
+                        <small id="password-mismatch" class="form-text text-muted">We'll never share your email with
+                            anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="form-label" for="re-enter password">Re-Enter Password</label>
+                        <input type="password" class="form-control form-input-text" id="inputPassword4"
+                            placeholder="Re-Enter Password">
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="form-label" for="contact-number">Contact Number</label>
+                        <input type="email" class="form-control form-input-text" id="inputEmail4"
+                            placeholder="Contact Number">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="form-label" for="inputPassword4">Password</label>
+                        <input type="password" class="form-control form-input-text" id="inputPassword4"
+                            placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="inputAddress">Address</label>
+                    <input type="text" class="form-control form-input-text" id="inputAddress"
+                        placeholder="Address Line 1">
+                    <input type="text" class="form-control form-input-text" id="inputAddress2"
+                        placeholder="Address Line 2">
+                    <input type="text" class="form-control form-input-text" id="inputAddress2"
+                        placeholder="Address Line 3">
+                    <input type="text" class="form-control form-input-text" id="inputAddress2"
+                        placeholder="Address Line 4">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="form-label" class="form-label" for="inputCity">City</label>
+                        <input type="text" class="form-control form-input-text" id="inputCity" placeholder="Enter City">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="form-label" for="inputState">State</label>
+                        <select id="inputState" class="form-control form-select-text">
+                            <option selected>State</option>
+                            <option>Andaman and Nicobar</option>
+                            <option>Andhra Pradesh</option>
+                            <option>Assam</option>
+                            <option>Arunachal Pradesh</option>
+                            <option>Bihar</option>
+                            <option>Chandigarh</option>
+                            <option>Chhattisgarh</option>
+                            <option>Dadra and Nagar Haveli</option>
+                            <option>Daman and Diu</option>
+                            <option>Delhi</option>
+                            <option>Goa</option>
+                            <option>Gujarat</option>
+                            <option>Haryana</option>
+                            <option>Himachal Pradesh</option>
+                            <option>Jammu and Kashmir</option>
+                            <option>Jharkhand</option>
+                            <option>West Bengal</option>
+                            <option>Karnataka</option>
+                            <option>Kerala</option>
+                            <option>Lakshadweep</option>
+                            <option>Madhya Pradesh</option>
+                            <option>Maharashtra</option>
+                            <option>Manipur</option>
+                            <option>Meghalaya</option>
+                            <option>Mizoram</option>
+                            <option>Nagaland</option>
+                            <option>Orissa</option>
+                            <option>Pondicherry</option>
+                            <option>Punjab</option>
+                            <option>Rajasthan</option>
+                            <option>Sikkim</option>
+                            <option>Tamil Nadu</option>
+                            <option>Tripura</option>
+                            <option>Uttaranchal</option>
+                            <option>Uttar Pradesh</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+
+                        <input type="text" class="form-control form-input-text" id="inputZip"
+                            placeholder="Enter Zip Code">
+                        <label class="form-label" for="inputZip">Zip Code</label>
+                    </div>
+                    <div class="form-group col-12">
+                        <label class="form-label" for="inputZip">Description</label>
+                        <textarea class="form-control form-input-text" name="message" id="message" rows="6"
+                            data-rule="required" data-msg=""
+                            placeholder="Please write something to describe yourself to the buyers"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary submit-button">Sign in</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

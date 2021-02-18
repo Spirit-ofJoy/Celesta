@@ -25,9 +25,11 @@ class Distributorboard extends Component {
             
             <div id="distributor-page-container">
                 <div className="distributor-navbar">
+                    <NavLink exact to="/distributor" className="back-to-home-distributor"><i className="ri-home-2-fill back-to-home-icon"></i></NavLink>
                     <NavLink exact to="/distributor/profile" activeClassName="active-clicked">Edit Profile Details</NavLink>
                     <NavLink exact to="/distributor/items" activeClassName="active-clicked">Add Items to our selection</NavLink>
                     <NavLink exact to="/distributor/catalogue" activeClassName="active-clicked">Modify my Catalogue</NavLink>
+                    <button className="settings-dashboard-distributor"><i className="ri-settings-3-fill"></i></button>
                 </div>
 
                 <div className="distributor-main-container" >
