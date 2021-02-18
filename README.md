@@ -63,6 +63,10 @@
 <p align = center id="Sign"><img src = "https://github.com/Spirit-ofJoy/Celesta/blob/master/docs/readme-images/Sign-Up%20Page%20for%20dist.PNG"></p>
 <li><h4> Profile Page </h4>
 <p align = center id="Profile"><img src = "https://github.com/Spirit-ofJoy/Celesta/blob/master/docs/readme-images/Profile-page.png"></p>
+<li><h4> Trader Section </h4>
+<p align = center id="Profile"><img src = "https://github.com/Spirit-ofJoy/Celesta/blob/master/docs/readme-images/trader%20section.gif"></p>
+<li><h4> Distributor Section </h4>
+<p align = center id="Profile"><img src = "https://github.com/Spirit-ofJoy/Celesta/blob/master/docs/readme-images/distributor%20section.gif"></p>
 </UL>
 <!-- Features -->
 <p id="Features"><h2><font>Features</font></h2></p>
