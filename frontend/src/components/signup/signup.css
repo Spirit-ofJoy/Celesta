@@ -235,17 +235,17 @@ For Address Box
 /*For Address Label - Because there are multiple line inputs but we are
 not taking paragraph input*/
 .address-label {
-transform: translateY(calc(-5.7*var(--shift-text-initially)));
+transform: translateY(calc(-7.6*var(--shift-text-initially)));
 }
 
 .form-input-text:focus~.address-label {
-transform: translateY(calc(-5.7*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
+transform: translateY(calc(-7.6*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
 transition: var(--transition);
 color: var(--color);
 }
 
 .form-input-text:not(:placeholder-shown)~.address-label {
-transform: translateY(calc(-5.7*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
+transform: translateY(calc(-7.6*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
 transition: var(--transition);
 }
 
