@@ -123,8 +123,9 @@ button.button-primary-class:focus {
   transition: 0.2s ease-in;
 }
 
+
 button.button-primary-class:hover > .arrow-pointer-item-card {
-  font-size: 14px;
+  font-size: 16px;
   transition: 0.3s ease-in-out;
 }
 

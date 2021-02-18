@@ -14,7 +14,7 @@ const ItemCard = (props) => {
     
     return (
 
-        <div className="card browse-list-item-card" style={{ maxWidth: '70%', marginTop: '20px', marginLeft: '15%', marginBottom: '20px', paddingBottom: '5px'}}>
+        <div className="card browse-list-item-card" style={{ maxWidth: '70%', marginTop: '20px', marginLeft: '15%'}}>
             <div className="card-header browse-list-item-card-header-outer-div">
                 <div className="row browse-list-item-card-header-inner-div position-relative">
                     <h4 className="col-11 browse-list-item-card-header-item-name">{props.item.name}</h4>
@@ -41,7 +41,7 @@ const ItemCard = (props) => {
                         <h6>{props.distributor.carton}</h6>
                     </div>
                     <div className="col-4"> </div>
-                    <button type="button" className="btn btn-dark col-2 align-self-end" style={{ maxWidth: 150 }} onClick={() => map_setIsOpen(true) } >View on Map</button>
+                    <button type="button" className="col-3 align-self-end button-primary-class bottom-button" style={{ maxWidth: 150 }} onClick={() => map_setIsOpen(true) } >View on Map</button>
                     <MapModal open={map_isOpen} close ={() => {map_setIsOpen(false)} } location={props.distributor.location}/>
                 </div>
             </div>
