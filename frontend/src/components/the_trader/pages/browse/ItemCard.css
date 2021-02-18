@@ -1,0 +1,135 @@
+.card-body {
+  padding: none;
+}
+
+.browse-list-item-card {
+  background-color: white;
+  box-shadow: 0 5px 12px 2px rgb(192, 192, 192);
+}
+
+.browse-list-item-card-header-outer-div {
+  padding: 0px 12px;
+}
+.browse-list-item-card-header-outer-div:hover {
+  background-color: rgb(231, 231, 231);
+}
+
+.browse-list-item-card-header-inner-div {
+}
+
+.browse-list-item-card-header-item-name {
+  padding: 10px;
+  margin: 0;
+  font: 300;
+  letter-spacing: 1px;
+}
+
+.browse-list-item-card-distributor-name-outer-div {
+  padding: 0px 12px;
+}
+
+.browse-list-item-card-distributor-name-inner-div {
+  letter-spacing: 1px;
+  font: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  padding: 12px 0px;
+}
+
+.browse-item-card-distributor-name-distributor-name {
+}
+
+.browse-item-card-footer-outer-div {
+  padding: 0px 12px;
+}
+
+.browse-item-card-footer-inner-div {
+}
+
+.position-relative {
+  position: relative;
+}
+
+.browse-item-card-footer-outer-div {
+  background-color: rgb(243, 243, 243);
+}
+
+.padding-extra {
+  padding: 10px;
+}
+
+button.button-primary-class {
+  margin-right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  min-width: 150px;
+  /*Main styling*/
+  color: black;
+}
+button.button-primary-class:focus {
+  outline: none;
+}
+.button-primary-class-header {
+  padding: 12px;
+}
+
+.top-button {
+  border-top: 0px white solid;
+  border-right: 0px white solid;
+  border-left: 0.5px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(255, 255, 255);
+  background-color: rgb(255, 157, 157);
+  border-radius: 10px 0 0 10px;
+}
+
+.middle-button {
+  border-top: 0px white solid;
+  border-right: 0px white solid;
+  border-left: 0.5px solid rgb(115, 255, 150);
+  border-bottom: 0.1px solid rgb(219, 219, 219);
+  background-color: rgb(115, 255, 150);
+  border-radius: 10px 0 0 10px;
+}
+
+.bottom-button {
+  border-top: 0px white solid;
+  border-right: 0px white solid;
+  border-left: 0.5px solid rgb(4, 184, 255);
+  border-bottom: 0.1px solid rgb(219, 219, 219);
+  background-color: #04b8ff;
+  border-radius: 10px 0 0 10px;
+}
+
+.top-button:hover {
+  color: white;
+  background-color: rgb(255, 45, 45);
+  border-radius: 10px 0 0 10px;
+  transition: 0.2s ease-in;
+}
+
+.middle-button:hover {
+  color: rgb(255, 255, 255);
+  background-color: #22ee5b;
+  border-radius: 10px 0 0 10px;
+  transition: 0.2s ease-in;
+}
+
+.bottom-button:hover {
+  color: white;
+  background-color: rgb(0, 110, 255);
+  border-radius: 10px 0 0 10px;
+  transition: 0.2s ease-in;
+}
+
+button.button-primary-class:hover > .arrow-pointer-item-card {
+  font-size: 14px;
+  transition: 0.3s ease-in-out;
+}
+
+.arrow-pointer-item-card {
+  color: white;
+  font-size: 0px;
+  transition: 0.3s ease-in-out;
+}

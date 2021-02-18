@@ -1,0 +1,9 @@
+.orders-view-profile-button:hover >  .orders-view-profile-icon {
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+.orders-view-profile-icon {
+    font-size: 0px;
+    transition: 0.3s ease-in-out;
+}
