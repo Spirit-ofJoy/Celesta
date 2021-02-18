@@ -17,14 +17,14 @@
 </a>
 </p>
 
-## Idea Abstract
+## 📫 Idea Abstract
 <UL>
         <li><a href = "https://drive.google.com/file/d/1CvZo34A2acqv5k0peHJpNGbSgtSS0kuX/view?usp=sharing"> Idea Presentation </a> 
         <li><a href = "https://drive.google.com/file/d/1MlJh7UG-bjhvNepHpU3X2msiwNOXPpyt/view?usp=sharing"> Demo Video </a> 
 </UL> 
 
 <!-- Table of contents -->
-## Table of contents
+## 📝 Table of contents
 <UL>
 <li> <a href="#About"> About </a>
     <UL type = square>
@@ -85,7 +85,7 @@
 <p align = center id="Profile"><img src = "https://github.com/Spirit-ofJoy/Celesta/blob/master/docs/readme-images/distributor%20section.gif"></p>
 </UL>
 <!-- Features -->
-<p id="Features"><h2><font>Features</font></h2></p>
+<p id="Features"><h2><font>✅ Features</font></h2></p>
 <br>
 <UL>
 <li><I> Trader/Distributor registration and login </I>
@@ -101,7 +101,7 @@
 <li><I> Orders Placement </I>
 </UL>
 <!-- Installation -->
-<p id="Installation"><h2><font> Installation </font></h2></p>
+<p id="Installation"><h2><font>🚀 Installation </font></h2></p>
 <p id="Pre"><h4><font> Pre-requisites : </font></h4></p>
 1. Make sure you have mysql, nodejs, and react-express installed.<br>
     To install mysql, nodejs and react-express refer the following links :<br>
@@ -161,10 +161,10 @@
     npm start
 ```
 <!-- Bug and feature request -->
-<p id="Bug"><h2><font> Report a Bug / Recommend a new feature : </font></h2></p>
+<p id="Bug"><h2><font>🤝 Report a Bug / Recommend a new feature : </font></h2></p>
 Feel free to file a new issue with a respective title and description on the <a href = "https://github.com/Spirit-ofJoy/Celesta/issues"> Kraya-Anti </a> repository. If you already found a solution to your problem, we would love to review your pull request!
 <!-- Contributing -->
-<p id="Contributing"><h2><font> Contributing </font></h2></p>
+<p id="Contributing"><h2><font>❤️ Contributing </font></h2></p>
 Contributions are what makes the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 1. Fork the Project
@@ -173,7 +173,7 @@ Contributions are what makes the open source community such an amazing place to 
 4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 <!-- License -->
-<p id="License"><h2><font> License </font></h2></p>
+<p id="License"><h2><font>📘 License </font></h2></p>
 <font face = "Verdana"> Distributed under the MIT License. See<a href = "https://github.com/Spirit-ofJoy/Celesta/blob/master/LICENSE"> LICENSE </a>for more information.</font>
 <!-- Contributors -->
 <p id="Developers"><h2><font> Developers </font></h2></p>
@@ -185,4 +185,6 @@ Contributions are what makes the open source community such an amazing place to 
 </UL>
 <hr>
 
-<a href = "#Top"> Back to top </a>
+<a href = "#Top"> 
+        Back to top 
+</a>
