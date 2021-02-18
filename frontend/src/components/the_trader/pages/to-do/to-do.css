@@ -38,3 +38,9 @@
   background-color: pink;
   cursor: pointer;
 }
+
+.list-upper-div {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

@@ -56,9 +56,10 @@ class ToDo extends Component {
             <button type="submit">add</button>
           </form>
         </div>
-
+        <div className="list-upper-div">
         <List entries={this.state.items}
                   delete={this.deleteItem}/>
+        </div>
       </div>
     );
   }
