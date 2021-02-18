@@ -9,6 +9,11 @@
 <a href="https://github.com/Spirit-ofJoy/Celesta/blob/master/LICENSE" target="_blank">
         <p align = center><img src = "https://img.shields.io/badge/License-MIT-green"></p>
 </a>
+## Idea Abstract
+<UL>
+        <li><a href = ""> Idea Presentation </a> 
+        <li><a href = "https://drive.google.com/file/d/1MlJh7UG-bjhvNepHpU3X2msiwNOXPpyt/view?usp=sharing"> Demo Video </a> 
+</UL>
 <!-- Table of contents -->
 ## Table of contents
 <UL>
