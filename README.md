@@ -50,7 +50,7 @@
 </UL>
 
 <!-- Heading2(About) -->
-<p id="About"><h2><font> About This Project : </font></h2></p>
+<p id="About"><h2><font>🔍 About This Project : </font></h2></p>
 <br>
 <!-- Description -->
 <font face = "Verdana"> This Website provides traders a simplified map based platform to look for distributors who are near to them so that desired goods be supplied at a reasonable price.</font>
@@ -71,8 +71,7 @@
 <li><a href = "https://www.mysql.com/"> MySQL </a>
 </UL></font>
 <!-- UI-Design -->
-<p id="UI"><h2><font><a href="https://s.w.org/images/core/emoji/13.0.0/svg/1f4bb.svg"> 
-        </a>User Interface Design </font></h2></p>
+<p id="UI"><h2><font>💻 User Interface Design </font></h2></p>
 <UL>
 <li><h4> Login Page </h4>
 <p align = center id="Login"><img src = "https://github.com/Spirit-ofJoy/Celesta/blob/master/docs/readme-images/Login.PNG"></p>
