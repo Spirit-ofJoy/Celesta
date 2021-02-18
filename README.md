@@ -5,7 +5,7 @@
 <!-- Image logo-->
 <p align = center><img src = "https://github.com/Spirit-ofJoy/Celesta/blob/master/docs/readme-images/logo.jpg"></p>
 <br>
-<p align = center><font face="Helvetica" color="Red">"Bridges the gap between Traders and Distributors"</font></p>
+<p align = center><font face="Helvetica" color="Red">"Bridging the gap between Traders and Distributors"</font></p>
 
 <!-- Table of contents -->
 ## Table of contents
