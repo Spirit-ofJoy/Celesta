@@ -24,9 +24,9 @@ const Browse = (props) => {
 
 let data = {
     item: {
-        name: 'Coca-Cola',
-        description: 'Coca-Cola tu, Shola Shola tu',
-        brand: 'Musk-TWeets-Co.'
+        name: 'Bhujia',
+        description: 'A popular crispy snack prepared by using moth beans and besan (gram flour) and spices',
+        brand: 'Haldi-Ram'
     },
     distribs: [
         {

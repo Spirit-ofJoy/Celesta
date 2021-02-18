@@ -37,7 +37,7 @@ class Signup_distributor extends Component {
               <h2 className="sub-heading">
                 Are you from a Business or an Industry?<br />
                 </h2>
-                <div className="signup-Switch"><Link to="/signup"><button type ="button" id="switch-Signup-linking">TRADER</button></Link>{/*Do styling of this button*/}
+                <div className="signup-Switch"><Link to="/signup"><button type ="button" id="switch-Signup-linking" className="btn btn-primary">Sign-Up as a Trader</button></Link>{/*Do styling of this button*/}
               </div>
             </div>
             <div className="container">
