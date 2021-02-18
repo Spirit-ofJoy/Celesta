@@ -56,7 +56,7 @@ class Login extends Component {
                     </div>
                     <div className="login-main-link-block">
                         <div className="login-main-block">
-                            <div className="login-main-linking"><a href="https://google.com" id="Signup-linking">Redirect to Sign-Up</a></div>
+                            <div className="login-main-linking"><a href="/signup" id="Signup-linking">Redirect to Sign-Up</a></div>
                         </div>
                     </div>
                 </div>

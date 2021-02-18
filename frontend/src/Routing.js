@@ -4,6 +4,8 @@ import { SwitchTransition, CSSTransition, TransitionGroup } from "react-transiti
 
 import Home from './components/home/Home';
 import Login from './components/login/Login';
+import SignUpTrader from './components/signup/Signup';
+import SignUpDistrib from './components/signup/Signup_distributor';
 import Profile from './components/profile/Profile';
 import Trader from './components/the_trader/Dashboard';
 import Distributor from './components/the_distributor/Distributorboard';
@@ -25,6 +27,14 @@ export default class Routing extends Component {
 
                                 <Route path="/login">
                                     <Login />
+                                </Route>
+
+                                <Route exact path="/signup">
+                                    <SignUpTrader />
+                                </Route>
+
+                                <Route path="/signup/distributor">
+                                    <SignUpDistrib />
                                 </Route>
 
                                 <Route path="/profile">
