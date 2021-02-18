@@ -15,7 +15,14 @@
 <a href="https://www.npmjs.com/package/npm/v/6.14.10" target="_blank">
         <img src="https://img.shields.io/badge/npm-v6.14.10-red">
 </a>
- </p>
+</p>
+
+## Idea Abstract
+<UL>
+        <li><a href = ""> Idea Presentation </a> 
+        <li><a href = "https://drive.google.com/file/d/1MlJh7UG-bjhvNepHpU3X2msiwNOXPpyt/view?usp=sharing"> Demo Video </a> 
+</UL> 
+
 <!-- Table of contents -->
 ## Table of contents
 <UL>
