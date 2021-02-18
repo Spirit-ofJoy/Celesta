@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Login.css';
 
@@ -44,11 +45,15 @@ class Login extends Component {
                     <div className="login-main-title">
                         <h1>User Login</h1>
                     </div>
+
+
                     <div className="login-main-input-block">
                         <div className="login-main-block"><i className="login-main-fas fa-user-alt" /><input className="login-main-txtfld" placeholder="Username" id="uname-fld"/></div>
                         <div className="login-main-block"><i className="login-main-fas fa-lock" /><input type="password" className="login-main-txtfld" placeholder="Password" id="passwd-fld"/></div>
                         <button id="login-main-btn" onClick={ () => this.processLogin() }>Proceed</button>
                     </div>
+
+
                     <div className="login-main-link-block">
                         <div className="login-main-block">
                             <div className="login-main-link">Don't have a registered account?</div>
@@ -56,13 +61,14 @@ class Login extends Component {
                     </div>
                     <div className="login-main-link-block">
                         <div className="login-main-block">
-                            <div className="login-main-linking"><a href="/signup" id="Signup-linking">Redirect to Sign-Up</a></div>
+                            <div className="login-main-linking"><Link to="/signup"><button type ="button" id="Signup-linking">Redirect to Sign-Up</button></Link>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         );
     }
-}  
+}
 
 export default Login;

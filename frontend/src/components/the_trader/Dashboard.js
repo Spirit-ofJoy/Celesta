@@ -16,14 +16,14 @@ class Dashboard extends Component {
         super();
 
         this.state = {
-            
+
         }
     }
 
     render() {
 
         return (
-            
+
             <div id="trader-page-container">
                 <div className="trader-navbar">
                     <NavLink exact to="/trader" className="back-to-home"><i className="ri-home-2-fill back-to-home-icon"></i></NavLink>
@@ -40,11 +40,11 @@ class Dashboard extends Component {
 
                             <Route exact path="/trader" >
                                 <motion.div initial="out" animate="in" exit="exit" variants={traderPageVariants} transition={traderPageTransitions}> <Welcome /> </motion.div>
-                            </Route> 
+                            </Route>
 
                             <Route path="/trader/details" >
                                 <motion.div initial="out" animate="in" exit="exit" variants={traderPageVariants} transition={traderPageTransitions}> <Details /> </motion.div>
-                            </Route> 
+                            </Route>
 
                             <Route path="/trader/browse" >
                                 <motion.div initial="out" animate="in" exit="exit" variants={traderPageVariants} transition={traderPageTransitions}> <Browse /> </motion.div>
@@ -57,10 +57,10 @@ class Dashboard extends Component {
                             <Route path="/trader/toDo" >
                                 <motion.div initial="out" animate="in" exit="exit" variants={traderPageVariants} transition={traderPageTransitions}> <ToDoList /> </motion.div>
                             </Route>
-                            
+
                         </Switch>
                     </AnimatePresence>
-                    
+
                 </div>
             </div>
         );
@@ -77,7 +77,7 @@ const traderPageVariants = {
         opacity: 0,
         x: "-100vw",
         scale: 0.8
-    }, 
+    },
     exit: {
         opacity: 0,
         x: "100vw",

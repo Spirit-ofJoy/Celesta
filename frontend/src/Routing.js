@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route} from "react-router-dom";
 import { SwitchTransition, CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Home from './components/home/Home';
@@ -9,11 +9,12 @@ import SignUpDistrib from './components/signup/Signup_distributor';
 import Profile from './components/profile/Profile';
 import Trader from './components/the_trader/Dashboard';
 import Distributor from './components/the_distributor/Distributorboard';
+//import Signup_distributor from './components/signup/Signup_distributor';
 import './styles/Routing.css';
 
 //Utility class to handle Routing on Web-app
 export default class Routing extends Component {
-    
+
     render() {
         return (
             <BrowserRouter>
