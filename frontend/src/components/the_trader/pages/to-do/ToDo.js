@@ -1,87 +1,67 @@
-import React from 'react';
-import {Component} from 'react' ;
-import TodoList from './pages/to-do/List'
-import './to-do.css'
+import { Component } from "react";
+import "./to-do.css";
+import List from "./List";
 
-class ToDo extends Component  {
-
+class ToDo extends Component {
   constructor(props) {
-  super(props);
+    super(props);
 
-  this.state = {
-    items: []
-  };
-
-  this.addItem = this.addItem.bind(this);
-  this.deleteItem = this.deleteItem.bind(this);
-}
-
-addItem(e){
-
-  if(this._inputElement.value !== "") {
-    var newItem = {
-      text: this._inputElement.value,
-      key: Date.now()
+    this.state = {
+      items: []
     };
 
-    this.setState((prevState) => {
-      return {
-        items: prevState.items.concat(newItem)
-      };
-    });
-
-    this._inputElement.value = "";
+    this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
-  console.log(this.state.items);
+  addItem(e) {
+    var itemArray = this.state.items;
 
-  e.preventDefault();
+    if (this._inputElement.value !== "") {
+      itemArray.unshift(
+        {
+          text: this._inputElement.value,
+          key: Date.now()
+        }
+      );
 
-}
+      this.setState({
+        items: itemArray
+      });
 
+      this._inputElement.value = "";
+    }
+    console.log(itemArray);
+    e.preventDefault();
+  }
 
-deleteItem(key) {
-  var filteredItems = this.state.items.filter(function (item) {
-    return (item.key !== key);
-  });
+  deleteItem(key) {
+    var filteredItems = this.state.items.filter(function (item) {
+      return (item.key !== key);
+    });
 
-  this.setState({
-    items: filteredItems
-  });
-}
+    this.setState({
+      items: filteredItems
+    });
+  }
 
-render(){
-
+  render() {
     return (
-        <div className="card" id="trader-toDo-container">
-            <h1>Your To Do List</h1>
-
-            <br /><br /><br /><br />
-
-            <div classname="todoListMain">
-              <div classname="header">
-                <form onSubmit={this.addItem}>
-                {/* Form for taking the details so we can get the desired output*/}
-
-
-                  <input ref={(a) => this._inputElement = a}
-                          placeholder="DAAL DO ANDAR" >
-                  </input>
-                  {/*Creating a reference of input value to the items array*/}
-
-                  {/*Button for submitting the details of the entered text*/}
-                    <button type="submit">Bhadao</button>
-                </form>
-              </div>
-            </div>
-
-            <List entries={this.state.items}
-                  delete={this.deleteItem} />
-
+      <div className="todoListMain">
+        <div className="header">
+          <form onSubmit={this.addItem}>
+            <input ref={(a) => this._inputElement = a}
+              placeholder="enter task">
+            </input>
+            <button type="submit">add</button>
+          </form>
         </div>
 
-      );
-    }
+        <List entries={this.state.items}
+                  delete={this.deleteItem}/>
+      </div>
+    );
+  }
 }
 
 export default ToDo;

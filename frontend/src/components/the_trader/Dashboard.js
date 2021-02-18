@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Browse from './pages/browse/Browse';
 import Details from './pages/details/Details';
 import PreviousOrders from './pages/prev-orders/PreviousOrders';
-import ToDoList from './pages/to-do/List';
+import ToDoList from './pages/to-do/ToDo';
 import Welcome from './Welcome';
 import './Dashboard.css';
 
