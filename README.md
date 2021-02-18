@@ -19,7 +19,7 @@
 
 ## Idea Abstract
 <UL>
-        <li><a href = ""> Idea Presentation </a> 
+        <li><a href = "https://drive.google.com/file/d/1CvZo34A2acqv5k0peHJpNGbSgtSS0kuX/view?usp=sharing"> Idea Presentation </a> 
         <li><a href = "https://drive.google.com/file/d/1MlJh7UG-bjhvNepHpU3X2msiwNOXPpyt/view?usp=sharing"> Demo Video </a> 
 </UL> 
 
