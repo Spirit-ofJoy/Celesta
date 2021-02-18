@@ -6,7 +6,7 @@ const OrderList = (props) => {
 
         //Dynamic list of choices
         return (
-            <div className="orderlist-container" style={{width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor:'black'}}>
+            <div className="orderlist-container" style={{width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor:'#e0e0e0'}}>
                 
                 {
                     props.data.map((orderDetails, i) => {

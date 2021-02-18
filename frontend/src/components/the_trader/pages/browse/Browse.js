@@ -14,7 +14,7 @@ const Browse = (props) => {
 
     return (
         <div className="card" id="trader-browse-container">
-            <h1 style={{margin:'30px'}}>Browse</h1>
+            <h1 id="browse_heading" style={{margin:'30px'}}>Browse</h1>
             <SearchBar changeOption={changeOption}/>
             <BrowseList data={data}/>
         </div>

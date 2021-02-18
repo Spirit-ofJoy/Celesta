@@ -26,10 +26,12 @@ class Dashboard extends Component {
             
             <div id="trader-page-container">
                 <div className="trader-navbar">
+                    <NavLink exact to="/trader" className="back-to-home"><i className="ri-home-2-fill back-to-home-icon"></i></NavLink>
                     <NavLink exact to="/trader/details" activeClassName="active-clicked">My Details</NavLink>
                     <NavLink exact to="/trader/browse" activeClassName="active-clicked">Browse</NavLink>
                     <NavLink exact to="/trader/prev_orders" activeClassName="active-clicked">Previous Orders</NavLink>
                     <NavLink exact to="/trader/toDo" activeClassName="active-clicked">To-Do List</NavLink>
+                    <button className="settings-dashboard"><i className="ri-settings-3-fill settings-icon"></i></button>
                 </div>
 
                 <div className="trader-main-container" >

@@ -7,3 +7,12 @@
     align-items: center;
     width: 100%;
 }
+
+#browse_heading {
+    text-transform: uppercase;
+    font-size:34px;
+    letter-spacing: 2px;
+    color: rgb(50, 49, 54);
+    display:none;
+}
+
