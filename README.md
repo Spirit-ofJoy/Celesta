@@ -5,15 +5,17 @@
 <!-- Image logo-->
 <p align = center><img src = "https://github.com/Spirit-ofJoy/Celesta/blob/master/docs/readme-images/logo.jpg"></p>
 <br>
-<p align = center><font face="Helvetica" color="Red">"Bridging the gap between Traders and Distributors"</font></p>
+<p align = center><font face="Helvetica" color=cyan>"Bridging the gap between Traders and Distributors"</font><br><br>
 <a href="https://github.com/Spirit-ofJoy/Celesta/blob/master/LICENSE" target="_blank">
-        <p align = center><img src = "https://img.shields.io/badge/License-MIT-green"></p>
+        <img src = "https://img.shields.io/badge/License-MIT-green">
 </a>
-## Idea Abstract
-<UL>
-        <li><a href = ""> Idea Presentation </a> 
-        <li><a href = "https://drive.google.com/file/d/1MlJh7UG-bjhvNepHpU3X2msiwNOXPpyt/view?usp=sharing"> Demo Video </a> 
-</UL>
+<a href="#Developers" target="_blank">
+        <img src="https://img.shields.io/badge/Developers-4-cyan">
+</a>
+<a href="https://www.npmjs.com/package/npm/v/6.14.10" target="_blank">
+        <img src="https://img.shields.io/badge/npm-v6.14.10-red">
+</a>
+ </p>
 <!-- Table of contents -->
 ## Table of contents
 <UL>
