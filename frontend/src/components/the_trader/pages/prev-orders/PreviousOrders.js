@@ -18,19 +18,19 @@ let orderData = [
     {
         item: 'Coca-Cola',
         distrib: 'distrib-id',
-        distrib_name: 'Wa Luigi',
-        date: '12/10/200 BC'
+        distrib_name: 'Hindustan Distributors',
+        date: '12/01/2021'
     },
     {
-        item: 'Timber',
+        item: 'Coca-Cola',
         distrib: 'distrib-id',
-        distrib_name: 'Florida Man',
-        date: '12/12/2012 '
+        distrib_name: 'Raj Distributors',
+        date: '31/12/2020 '
     },
     {
         item: 'Limca',
         distrib: 'distrib-id',
-        distrib_name: 'Itz ah meeeee, Mario',
+        distrib_name: 'Raj Distributors',
         date: '22/12/2020'
     }
 ]

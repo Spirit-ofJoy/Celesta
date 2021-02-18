@@ -31,16 +31,16 @@ let data = {
     distribs: [
         {
             id:'distrib_id1',
-            location:'map-api-location2',
-            name:'Chunni-Lal',
-            cost: 40,
+            location:'27.200927,78.008363',
+            name:'Raj Distributors',
+            cost: 2000,
             carton: 50
         },
         {
             id:'distrib_id2',
-            location:'map-api-location1',
-            name:'Chanda Mama durr ke',
-            cost: 7,
+            location:'27.189405,77.998812',
+            name:'Hindustan Distributors',
+            cost: 700,
             carton: 10
         }
     ]

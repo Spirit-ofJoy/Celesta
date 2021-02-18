@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 
 import ItemModal from './ItemModal'
+import MapModal from './MapModal'
 
 const ItemCard = (props) => {
 
     const [item_isOpen, item_setIsOpen] = useState(false);
+    const [map_isOpen, map_setIsOpen] = useState(false);
 
     console.log(props);
     
@@ -37,7 +39,8 @@ const ItemCard = (props) => {
                         <h6>{props.distributor.carton}</h6>
                     </div>
                     <div className="col-4"> </div>
-                    <button type="button" className="btn btn-dark col-2 align-self-end" style={{ maxWidth: 150 }}>View on Map</button>
+                    <button type="button" className="btn btn-dark col-2 align-self-end" style={{ maxWidth: 150 }} onClick={() => map_setIsOpen(true) } >View on Map</button>
+                    <MapModal open={map_isOpen} close ={() => {map_setIsOpen(false)} } location={props.distributor.location}/>
                 </div>
             </div>
         </div>
