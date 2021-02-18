@@ -40,7 +40,7 @@ class Signup extends Component {
                 {/*------------------------------Buttons Ends------------------------------*/}
               </h2>
 
-              <div className="signup-Switch"><Link to="/signup/distributor"><button type ="button" id="switch-Signup-linking">Distributor</button></Link></div>
+              <div className="signup-Switch"><Link to="/signup/distributor"><button type ="button" id="switch-Signup-linking" className="btn btn-primary">Sign-Up as a Distributor</button></Link></div>
 
             </div>
             {/*------------------------------Form Container------------------------------*/}
