@@ -14,7 +14,7 @@ const ItemCard = (props) => {
     
     return (
 
-        <div className="card browse-list-item-card" style={{ maxWidth: '70%', marginTop: '20px', marginLeft: '15%', marginBottom: '20px'}}>
+        <div className="card browse-list-item-card" style={{ maxWidth: '70%', marginTop: '20px', marginLeft: '15%', marginBottom: '20px', paddingBottom: '5px'}}>
             <div className="card-header browse-list-item-card-header-outer-div">
                 <div className="row browse-list-item-card-header-inner-div position-relative">
                     <h4 className="col-11 browse-list-item-card-header-item-name">{props.item.name}</h4>
