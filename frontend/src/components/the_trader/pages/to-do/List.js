@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import FlipMove from 'react-flip-move';
 
 class List extends Component {
@@ -21,7 +21,7 @@ class List extends Component {
 
     return (
       <ul className="theList">
-        <FlipMove duration={250} easing="ease-out">
+        <FlipMove duration={500} easing="ease-out">
           {listItems}
         </FlipMove>
       </ul>
