@@ -71,7 +71,8 @@
 <li><a href = "https://www.mysql.com/"> MySQL </a>
 </UL></font>
 <!-- UI-Design -->
-<p id="UI"><h2><font> User Interface Design </font></h2></p>
+<p id="UI"><h2><font><a href="https://s.w.org/images/core/emoji/13.0.0/svg/1f4bb.svg"> 
+        </a>User Interface Design </font></h2></p>
 <UL>
 <li><h4> Login Page </h4>
 <p align = center id="Login"><img src = "https://github.com/Spirit-ofJoy/Celesta/blob/master/docs/readme-images/Login.PNG"></p>
