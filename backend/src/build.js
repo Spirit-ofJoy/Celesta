@@ -271,6 +271,7 @@ app.post("/todo", (req, res) => {
   });
 });
 
+//This part here handles the search functionality
 app.post("/search/item", (req, res) => {
   var search = req.query.search;
   var search_in = req.query.search_in;
@@ -338,7 +339,7 @@ app.post("/search/item", (req, res) => {
     let searchItemsQuery = mysql.format(searchItems, [
       database.table.items,
       database.items.name,
-      search
+      search,
     ]);
 
     //querying whether the user exists in the Login table or not
@@ -349,13 +350,13 @@ app.post("/search/item", (req, res) => {
         return res.send("server error");
       }
       if (data[0]) {
-
         //next few lines will be some awful code. bear with it
         let itemsSelections = JSON.stringify(data); //this I am doing to pass the value in in the variable instead of passing the reference
         itemsSelections = JSON.parse(itemsSelections);
         brand_name = itemsSelections[0].brand;
 
-        let searchBrandInDistributors = "SELECT ??,??,??,?? FROM ?? WHERE ?? = ?";
+        let searchBrandInDistributors =
+          "SELECT ??,??,??,?? FROM ?? WHERE ?? = ?";
         let searchBrandInDistributorsQuery = mysql.format(
           searchBrandInDistributors,
           [
@@ -365,7 +366,7 @@ app.post("/search/item", (req, res) => {
             database.distributors.name,
             database.table.distributors,
             database.distributors.brand,
-            brand_name
+            brand_name,
           ]
         );
 
@@ -397,8 +398,91 @@ app.post("/search/item", (req, res) => {
     });
   }
 
+  if (search_in === String("tag")) {
+    let searchTags = "SELECT * FROM ?? WHERE ?? = ?";
+    let searchTagsQuery = mysql.format(searchTags, [
+      database.table.tags,
+      database.tags.tags,
+      search,
+    ]);
 
+    //querying whether the user exists in the Login table or not
+    pool.query(searchTagsQuery, function (err, data) {
+      if (err) {
+        console.log("Error in Search Tags Part.");
+        res.status(500);
+        return res.send("server error");
+      }
+      if (data[0]) {
+        //next few lines will be some awful code. bear with it
+        let itemsSelections = JSON.stringify(data); //this I am doing to pass the value in in the variable instead of passing the reference
+        itemsSelections = JSON.parse(itemsSelections);
+        item_id_list = itemsSelections[0].item_id;
 
+        item_id_list = searchFunctions.makeINSearchableStringFromJSONArray(
+          item_id_list
+        ); //this was the goal ("1","2","3",........"n");
+
+        let searchItemIDs = `SELECT * FROM ?? WHERE ?? IN ${item_id_list}`;
+        let searchItemIDsQuery = mysql.format(searchItemIDs, [
+          database.table.items,
+          database.items.item_id,
+        ]);
+
+        //querying whether the user exists in the Distributor table or not
+        pool.query(searchItemIDsQuery, function (error, result) {
+          if (error) {
+            console.log("Error in Sub Search Tags Part.");
+          }
+
+          if (result) {
+            var result_string = JSON.stringify(result);
+            brand_string = searchFunctions.getBrandList(result_string);//this was the goal ("1","2","3",........"n");
+
+            let searchBrands = `SELECT ??,??,??,?? FROM ?? WHERE ?? IN ${brand_string}`;
+            let searchBrandsQuery = mysql.format(searchBrands, [
+              database.distributors.items,
+              database.distributors.location,
+              database.distributors.distributor_id,
+              database.distributors.name,
+              database.table.distributors,
+              database.distributors.brand
+            ]);
+
+            //querying whether the user exists in the Distributor table or not
+            pool.query(searchBrandsQuery, function (errors, rows) {
+              if (errors) {
+                console.log("Error in Sub Search Tags Part.");
+              }
+
+              if (rows) {
+                var rows_string = JSON.stringify(rows);
+                var result_string = JSON.stringify(result);
+
+                var answer = searchFunctions.makeReturnableItemJSONFromBrandSearch(
+                  result_string,
+                  rows_string
+                );
+                answer = JSON.parse(answer);
+                //console.log(answer);
+                res.status(200);
+                return res.send(answer);
+              } else {
+                res.status(404);
+                return res.send("not found");
+              }
+            });
+          } else {
+            res.status(404);
+            return res.send("not found");
+          }
+        });
+      } else {
+        res.status(404);
+        return res.send("not found");
+      }
+    });
+  }
 });
 
 app.listen(port, () => {

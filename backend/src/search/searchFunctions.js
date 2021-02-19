@@ -1,3 +1,4 @@
+
 /**
  * This has to be used when the user searches through brand and Item names.
  *  WORKS FOR 2 SEARCH QUERY TYPES! YAYYY!!
@@ -47,6 +48,39 @@ var makeReturnableItemJSONFromBrandSearch = (from_items_list,from_distributors_l
   return answer;
 }
 
+var makeINSearchableStringFromJSONArray = (stringified_json_array) => {
+  json_array = JSON.parse(stringified_json_array);
+  answer = [];
+  for(i=0;i<json_array.length;i++)
+  answer.push(json_array[i]);
+  
+  answer = JSON.stringify(answer);
+  answer = answer.replace("[","(");
+  answer = answer.replace("]",")");
+  answer = answer.replace(/\"/g,"\'");
+  return answer;
+}
+
+
+var makeJSONArrayFromINSearchable = (in_string) => {
+  in_string = answer.replace("(","[");
+  in_string = answer.replace(")","]");
+  return in_string;
+}
+
+var getBrandList = (stringified_json_array) => {
+  json_array = JSON.parse(stringified_json_array);
+  answer = [];
+  for(i=0;i<json_array.length;i++)
+  answer.push(json_array[i].brand);
+  
+  answer = JSON.stringify(answer);
+  answer = answer.replace("[","(");
+  answer = answer.replace("]",")");
+  answer = answer.replace(/\"/g,"\'");
+  return answer;
+}
+//console.log(makeINSearchableStringFromJSONArray("[\"Ram Bagh\",\"Firozabad Road\",\"\",\"\",\"Agra\",\"Uttar Pradesh\",\"282001\"]"));
 
 
 
@@ -59,7 +93,10 @@ var makeReturnableItemJSONFromBrandSearch = (from_items_list,from_distributors_l
 
 
 module.exports = {
-  makeReturnableItemJSONFromBrandSearch:makeReturnableItemJSONFromBrandSearch
+  makeReturnableItemJSONFromBrandSearch:makeReturnableItemJSONFromBrandSearch,
+  makeINSearchableStringFromJSONArray:makeINSearchableStringFromJSONArray,
+  makeJSONArrayFromINSearchable:makeJSONArrayFromINSearchable,
+  getBrandList:getBrandList
 }
 
 /*
