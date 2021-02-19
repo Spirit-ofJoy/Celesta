@@ -1,25 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import SearchBar from './SearchBar';
 import BrowseList from './BrowseList';
 import './Browse.css';
+import { render } from '@testing-library/react';
 
-const Browse = (props) => {
+class Browse extends Component {
 
-    let current_option='brand';
-    const changeOption = (option) => {
-        current_option = option;
-        console.log(current_option);
+    constructor(props) {
+        super(props);
+
+        this.state = { 
+            current_option: 'brand',
+            searchField : " ",
+            data : this.props.data, 
+            webLocation : this.props.web_loc, 
+            BrowsingData : null
+        };
     }
+    
+    changeOption = (option) => {
+        this.setState({current_option: option, searchField: this.state.searchField});
+        //console.log(this.state.BrowsingData);
+    }
+
+    changeSearchField = (value) => {
+        this.setState({searchField: value});
+    }
+
+    loadBrowse = () => {
+        let urlReq = this.state.webLocation+"search/item?search="+this.state.searchField+"&search_in="+this.state.current_option;
+        console.log(urlReq);
+
+        fetch(urlReq, {
+            method: "POST",
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+               }
+        })
+        .then(response => response.json())
+        .then(data => this.setState({BrowsingData: data}));
+    }
+    
+    render() {
 
     return (
         <div className="card" id="trader-browse-container">
-            <h1 id="browse_heading" style={{margin:'30px'}}>Browse</h1>
-            <SearchBar changeOption={changeOption}/>
-            <BrowseList data={data}/>
+            <h1 id="browse_heading" style={{ margin: '30px' }}>Browse</h1>
+            <SearchBar changeOption={this.changeOption} changeSearchField={this.changeSearchField} loadBrowse={this.loadBrowse} />
+            <BrowseList data={this.state.BrowsingData} />
         </div>
 
-    ); 
+    );
+}
 }
 
 let data = {

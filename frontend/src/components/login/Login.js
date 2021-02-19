@@ -4,7 +4,7 @@ import { Redirect, Link } from 'react-router-dom';
 
 import './Login.css';
 
-//const fetchUrl = require("fetch").fetchUrl;
+const webLocation = 'http://localhost:3001/';
 
 class Login extends Component {
 
@@ -19,7 +19,7 @@ class Login extends Component {
     processLogin = () => {
         let email = document.getElementById('uname-fld').value;
         let pass = document.getElementById('passwd-fld').value;
-        let urlReq = 'http://localhost:3001/login?email='+email+'&password='+pass;
+        let urlReq = webLocation+'login?email='+email+'&password='+pass;
         
         fetch(urlReq, {
             method: "POST",
@@ -48,10 +48,10 @@ class Login extends Component {
     render() {
         if(this.state.pageStatus==='trader') {
             console.log("trader");
-            return <Redirect to='/trader' />;
+            return <Redirect to={{pathname: '/trader', state: {id:this.state.serverResponse.id} }} />;
         } else if(this.state.pageStatus==='distributor') {
             console.log("distributor");
-            return <Redirect to='/distributor' />;
+            return <Redirect to={{pathname: '/distributor', state: {id:this.state.serverResponse.id} }} />;
         } else {
 
             return (

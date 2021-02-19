@@ -14,7 +14,7 @@ const EditComponent = (props) => {
         <div className="trader-profile-edit-component" style={{textAlign:'left'}}>
             <h5>{props.field}</h5>
             <div className="input-group mb-3" style={{width:'100%', float:'left'}}>
-                <input type="text" className="form-control" defaultValue={props.fieldValue} disabled={true} ref={editField => (input = editField) } />
+                <input type="text" className="form-control" defaultValue={props.fieldValue} disabled={true} ref={editField => (input = editField) } onChange={(e)=> props.change(e.target.value)}/>
                 <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={ processEdit }>Edit field</button>
             </div>
         </div>

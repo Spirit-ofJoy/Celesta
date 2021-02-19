@@ -10,7 +10,7 @@ const ItemCard = (props) => {
     const [item_isOpen, item_setIsOpen] = useState(false);
     const [map_isOpen, map_setIsOpen] = useState(false);
 
-    console.log(props);
+    //console.log(props);
     
     return (
 
@@ -25,7 +25,7 @@ const ItemCard = (props) => {
 
             <div className="card-body browse-list-item-card-distributor-name-outer-div">
                 <div className="row browse-list-item-card-distributor-name-inner-div position-relative">
-                    <h5 className="col-11 browse-item-card-distributor-name-distributor-name">{props.distributor.name}</h5>
+                    <h5 className="col-11 browse-item-card-distributor-name-distributor-name">{props.item.distributor_name}</h5>
                     <button type="button" className="col-3 align-self-end button-primary-class middle-button" style={{ maxWidth: 'fit-content' }}>View Profile <i className="ri-arrow-right-s-line arrow-pointer-item-card"></i></button>
                 </div>
             </div>
@@ -34,15 +34,15 @@ const ItemCard = (props) => {
                 <div className="row browse-item-card-footer-inner-div position-relative">
                     <div className="col-6 align-self-start padding-extra">
                         <h6>Price per Carton</h6>
-                        <h6>{props.distributor.cost}</h6>
+                        <h6>{props.item.price_per_carton}</h6>
                     </div>
                     <div className="col-3 padding-extra">
                         <h6>Units per Carton</h6>
-                        <h6>{props.distributor.carton}</h6>
+                        <h6>{props.item.no_of_units}</h6>
                     </div>
                     <div className="col-4"> </div>
                     <button type="button" className="col-3 align-self-end button-primary-class bottom-button" style={{ maxWidth: 150 }} onClick={() => map_setIsOpen(true) } >View on Map  <i className="ri-arrow-right-s-line arrow-pointer-item-card"></i></button>
-                    <MapModal open={map_isOpen} close ={() => {map_setIsOpen(false)} } location={props.distributor.location}/>
+                    <MapModal open={map_isOpen} close ={() => {map_setIsOpen(false)} } location={props.item.location}/>
                 </div>
             </div>
         </div>

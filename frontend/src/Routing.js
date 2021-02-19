@@ -42,9 +42,7 @@ export default class Routing extends Component {
                                     <Profile distributor='distrib_id'/>
                                 </Route>
 
-                                <Route path="/trader">
-                                    <Trader location={location}/>
-                                </Route>
+                                <Route path="/trader" render={(props) => <Trader {...props}/>} />
 
                                 <Route path="/distributor">
                                     <Distributor location={location}/>
