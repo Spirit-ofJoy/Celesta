@@ -112,6 +112,7 @@
     </UL>
 2. Choose a good text-editor to initiate the project( Visual studio Code is recommended).<br>
 3. Make sure that your MySQL server is set to legacy configuration to avoid errors while initiating the project.<br>
+4. Read <a href="docs/backend.md">backend.md</a> to see how to set up mysql login for the app<br>
 <p id="Front"><h4><font>Front End Initiation : </font></h4></p>
 1. You can either install the project in zip format from our github or clone the repository using the following link in your local directory : 
 
