@@ -4,18 +4,24 @@ import ItemCard from './ItemCard';
 
 const BrowseList = (props) => {
 
+    if(!props.data) {
+        return (
+            <div></div>
+        )
+    }
+    else {
+
         //Dynamic list of choices
         return (
             <div className="BrowseList-container" style={{width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor:'#e0e0e0'}}>
                 
                 {
-                    props.data.distribs.map((itemDetails, i) => {
+                    props.data.map((itemDetails, i) => {
                         
                         return (
                             <ItemCard 
                                 key={i /*For React to identify each item-card through key*/}
-                                item={props.data.item /*Item to display*/} 
-                                distributor={props.data.distribs[i] /*Distributor selling*/}
+                                item={props.data[i] /*Item to display*/} 
                             />
                         );
                     })
@@ -23,6 +29,6 @@ const BrowseList = (props) => {
             </div>
         );
     }
-    
+}    
 
 export default BrowseList;

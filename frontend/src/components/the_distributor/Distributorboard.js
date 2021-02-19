@@ -19,6 +19,10 @@ class Distributorboard extends Component {
         }
     }
 
+    componentDidMount(props) {
+        console.log(this.props.location.state.id);
+    }
+
     render() {
 
         return (
