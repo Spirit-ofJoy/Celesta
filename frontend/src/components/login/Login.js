@@ -4,7 +4,7 @@ import { Redirect, Link } from 'react-router-dom';
 
 import './Login.css';
 
-const webLocation = 'http://localhost:3001/';
+const webLocation = 'http://kraya-anti.herokuapp.com/';
 
 class Login extends Component {
 

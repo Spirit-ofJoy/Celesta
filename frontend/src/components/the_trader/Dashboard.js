@@ -10,7 +10,7 @@ import ToDoList from './pages/to-do/ToDo';
 import Welcome from './Welcome';
 import './Dashboard.css';
 
-const webLocation = 'http://localhost:3001/';
+const webLocation = 'http://kraya-anti.herokuapp.com/';
 
 class Dashboard extends Component {
 
