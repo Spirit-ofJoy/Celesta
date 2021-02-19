@@ -7,7 +7,7 @@ const app = express();
 const database = require("./database.json");
 const searchFunctions = require("./search/searchFunctions");
 const port = 3001;
-const mysqlLoginCredential = require("../../../.authorize/mysql-login.json");
+const mysqlLoginCredential = require("../../authorise/mysql-login.json");
 
 //!read the docs to get more clarity on why this is needed. (docs/backend.md)
 
@@ -18,7 +18,7 @@ const pool = mysql.createPool({
   host: "localhost",
   user: mysqlLoginCredential.user,
   password: mysqlLoginCredential.password,
-  database: "celesta",
+  database: mysqlLoginCredential.databaseName,
 });
 
 app.use(express.json());
