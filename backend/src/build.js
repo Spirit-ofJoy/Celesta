@@ -1,5 +1,6 @@
 const express = require("express");
 const mysql = require("mysql");
+const cors = require("cors");
 //var randomstring = require("randomstring");
 
 const app = express();
@@ -22,6 +23,7 @@ const pool = mysql.createPool({
 });
 
 app.use(express.json());
+app.use(cors());
 
 /**
  * {"userExists":true/false,"distributor":false/true,"id":"id of the user"}

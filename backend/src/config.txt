@@ -1,0 +1,1 @@
+{"host":"localhost","user":"root","password":"Y@$hendu2002","database":"api"}
