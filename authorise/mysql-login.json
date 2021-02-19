@@ -1,7 +1,7 @@
 {
-    "user":"root",
-    "password":"1AYUSHSharma2001#",
-    "databaseName":"celesta"
+    "user":"mysql user -- -- use root for testing if nothing else works",
+    "password":"mysql password -- -- use root password for testing if nothing else works",
+    "databaseName":"database name that you gave"
 }
 
 
