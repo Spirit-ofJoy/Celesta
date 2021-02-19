@@ -266,8 +266,13 @@ app.post("/todo", (req, res) => {
       res.status(500);
       return res.send("server error");
     }
+    if (data.affectedRows == 1) {
     res.status(200);
     return res.send("updated");
+    } else {
+      res.status(500);
+    return res.send("server error");
+    }
   });
 });
 
