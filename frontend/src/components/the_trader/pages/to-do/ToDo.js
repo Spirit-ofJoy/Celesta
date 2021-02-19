@@ -18,6 +18,13 @@ class ToDo extends Component {
     var itemArray = this.state.items;
 
     if (this._inputElement.value !== "") {
+
+      let options={
+        method : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: this._inputElement.value , key: Date.now()})
+      }
+      fetch('http://localhost:3000/trader/toDo', options);
       itemArray.unshift(
         {
           text: this._inputElement.value,
@@ -37,6 +44,8 @@ class ToDo extends Component {
 
   deleteItem(key) {
     var filteredItems = this.state.items.filter(function (item) {
+
+      fetch('http://localhost:3000/trader/toDo', {method: 'DELETE'});
       return (item.key !== key);
     });
 
