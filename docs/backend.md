@@ -2,11 +2,20 @@
 * This documentation will give you a step by step instruction on how to set up backend on your local machine or server.
 
 ## For connecting to your mysql database
-* Make a folder named **.authorise** and place it in the parent folder in which your whole Celesta Project folder is present. .i.e. This folder is the sibling folder of the Celesta folder. That add **mysql-login.json** to it with the following piece of information. *Your project wil start working on the mysql on your machine*
+* In a folder named **authorise** Configure **mysql-login.json** with the information asked. *The project wil start working on the mysql on your machine*
   
 ```json
 {
-    "user":"root",
-    "password":"your-root-password"
+    "user":"mysql user -- -- use root for testing if nothing else works",
+    "password":"mysql password -- -- use root password for testing if nothing else works",
+    "databaseName":"database name that you gave"
+}
+```
+## For connecting to the map quest api
+* In a folder named **authorise** Configure **api.json** with the information asked. *The project wil start using your api*
+  
+```json
+{
+    "mapquest":"api key"
 }
 ```

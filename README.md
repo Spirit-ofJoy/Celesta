@@ -20,8 +20,8 @@
 <p id="Installation"><h2><font>🚀 Deployment Status </font></h2></p>
 <UL>
         <li>Backend: Deployed on <a href="http://kraya-anti.herokuapp.com/">http://kraya-anti.herokuapp.com/</a>
-        <li><a href="docs/Back-End Query.md">To check backend Queries - Refer this List (Back-End Query.md). Use Postman if needed<a></li>
-        <li>Frontend: Deployment in progress
+        <li><a href="docs/Back-End Query.md">To check backend Queries - Refer this List (Back-End Query.md). Use Postman if needed</a></li>
+        <li>Frontend: Deployment in progress. Integration continues.
 </UL> 
 
 ## 📫 Idea Abstract
