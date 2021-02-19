@@ -6,6 +6,7 @@
 }
 
 .input_text_search_query:not(:placeholder-shown) {
+    border-radius: 30px;
     border:2px solid #31AFD4;
     transition: 0.4s ease-in-out;
 }

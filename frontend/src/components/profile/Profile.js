@@ -4,15 +4,15 @@ import { Component } from 'react';
 import './Profile.css';
 
 let distributor = {
-    name: 'NAME OF THE DISTRIBUTOR',
-    address: 'WE LIVE WHERE SATAN\'S AFRAID OF US',
-    district: 'District',
-    state: 'State',
+    name: 'Hindustan Distribution Co.',
+    address: 'Galli-13, Mirzapur',
+    district: 'Mirzapur',
+    state: 'UP',
     rate: '4.5',
     contact_no: '+275098207359',
     email: 'fastnfrious@fnf.com',
     website: 'fnf.com',
-    description: 'We sell real people'
+    description: 'Kaleen Bhaiya se pehchan hai humaari.'
 }
 
 class Profile extends Component {
@@ -90,7 +90,7 @@ class Profile extends Component {
                                     </div>
                                 </div>
                                 {/* ADD THE CLASS class="map" to the iframe fo proper working of the map */}
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212644.8169107548!2d72.94602157780442!3d33.61632322373705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd07891722f%3A0x6059515c3bdb02b6!2sIslamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2sin!4v1612974190377!5m2!1sen!2sin" frameBorder={0} style={{ border: 0 }} allowFullScreen aria-hidden="false" tabIndex={0} className="map">
+                                <iframe src="https://maps.google.com/maps?q=25.133699,82.564430&z=8&output=embed" frameBorder={0} style={{ border: 0 }} allowFullScreen aria-hidden="false" tabIndex={0} className="map">
                                 </iframe>
                             </div>
                         </div>

@@ -41,7 +41,7 @@ class Home extends Component {
                                     <div className="details">
                                         <div className="center">
                                             <h1>Register and make a new account<br /></h1>
-                                            <button type="button" className="btn btn-success"  id="home-signup-btn" onClick={ () => this.signupBtnClick() }>Proceed to Sign up</button>
+                                            <Link to="/signup"><button type="button" className="btn btn-success"  id="home-signup-btn" >Proceed to Sign up</button></Link>
                                         </div>
                                     </div>
                                 </div>                                

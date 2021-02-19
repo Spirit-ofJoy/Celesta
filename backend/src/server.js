@@ -1,23 +1,3 @@
-const express = require('express')
-const app = express();
-const port = 3001;
-
-const login = require('./login');
-
-app.use(express.json());
-
-app.get('/', (req, res) => {
-    res.send("Running");
-});
-
-app.post('/login', (req, res) => {
-    login.validateLogin(req.body.username, req.body.password); 
-    res.send("Logging in.");
-});
-
-app.listen(port, () => { 
-    console.log("Backend running on port " + port);
-});
 
 /*
 Routes:
@@ -28,4 +8,3 @@ Routes:
 /filter/user --> GET = user based filter results
 /search/user --> GET = optimised user based result for items
 */
-

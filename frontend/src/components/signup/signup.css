@@ -4,7 +4,7 @@ Wave css
 
 /*----------------------------------------------
 Root Element. Copy this to every css part if you are splitting the css for
-any component  
+any component
 ---------------------------------------------*/
 :root {
 --wave-height: 12%;
@@ -16,7 +16,7 @@ any component
 --color: #1abc9c;
 --transition: 0.2s ease-in-out;
 --shift-text-initially: 25px;
---shift-text-on-input: 25px;
+--shift-text-on-input: 33px;
 --heading-color: rgb(50, 50, 50);
 --sub-heading-color: rgb(60, 60, 60);
 --heading-font-size: 30px;
@@ -235,17 +235,17 @@ For Address Box
 /*For Address Label - Because there are multiple line inputs but we are
 not taking paragraph input*/
 .address-label {
-transform: translateY(calc(-5.7*var(--shift-text-initially)));
+transform: translateY(calc(-7.6*var(--shift-text-initially)));
 }
 
 .form-input-text:focus~.address-label {
-transform: translateY(calc(-5.7*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
+transform: translateY(calc(-7.6*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
 transition: var(--transition);
 color: var(--color);
 }
 
 .form-input-text:not(:placeholder-shown)~.address-label {
-transform: translateY(calc(-5.7*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
+transform: translateY(calc(-7.6*var(--shift-text-initially) + var(--shift-text-on-input)*-1));
 transition: var(--transition);
 }
 
@@ -374,11 +374,6 @@ border: none;
 
 .business-page-distributor-page-switch:hover {
 outline: none;
-}
-
-/*hiding the other section. Use Switch to bring it back and hide distributor section*/
-#for-others {
-display: none;
 }
 
 /*The element with is class has to appear when password an re-enter passwords do not match*/

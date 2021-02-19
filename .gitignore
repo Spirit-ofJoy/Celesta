@@ -1,4 +1,6 @@
 #modules
 frontend/node_modules/
 backend/node_modules/
+authorise/
+authorise/mysql-login.json
 *.log
