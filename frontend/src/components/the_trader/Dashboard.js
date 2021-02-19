@@ -20,12 +20,6 @@ class Dashboard extends Component {
         this.state = {
             status: false,
             traderData: null
-        //     email: null,
-        //     Name: null,
-        //     phone: null,
-        //     address: null,
-        //     location: null,
-        //     to_do: null
         }
     }
 
