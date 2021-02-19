@@ -13,6 +13,7 @@
 ```
 ## For connecting to the map quest api
 * In a folder named **authorise** Configure **api.json** with the information asked. *The project wil start using your api*
+* Get Map Quest API [here](https://developer.mapquest.com/)
   
 ```json
 {
