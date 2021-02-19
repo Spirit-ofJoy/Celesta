@@ -1,13 +1,24 @@
 import React from 'react';
 import { Component } from 'react';
 
-import {Link , BrowserRouter , Switch , Route  } from 'react-router-dom' ;
+import {Link , BrowserRouter , Switch , Route ,Redirect  } from 'react-router-dom' ;
 
 import './signup.css';
 
 class Signup_distributor extends Component {
 
-
+  handleSubmit(e)
+  {
+    if(e.target[2].value!==e.target[3].value)
+    {
+      alert("Password mismatch");
+    }
+    else {
+      return <Redirect to='/login' />
+    }
+    console.log(e);
+    e.preventDefault();
+  }
   render()
   {
     return (
@@ -41,7 +52,7 @@ class Signup_distributor extends Component {
               </div>
             </div>
             <div className="container">
-              <form>
+              <form onSubmit={this.handleSubmit.bind(this)}>
                 <div className="form-group">
                   <input type="text" className="form-control form-input-text" id="distributor_name" aria-describedby="emailHelp" placeholder="Name of the Distributorship" required />
                   <label className="form-label" htmlFor="Distributorship">Distributorship</label>
