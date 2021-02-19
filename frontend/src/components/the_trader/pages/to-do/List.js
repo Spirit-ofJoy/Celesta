@@ -20,11 +20,11 @@ class List extends Component {
     var listItems = todoEntries.map(this.createTasks);
 
     return (
-        <ul className="theList">
-          <FlipMove duration={500} easing="ease-out">
-            {listItems}
-          </FlipMove>
-        </ul>
+      <ul className="theList">
+        <FlipMove duration={500} easing="ease-out">
+          {listItems}
+        </FlipMove>
+      </ul>
       );
     }
   }

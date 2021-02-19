@@ -1,11 +1,24 @@
 import React from 'react';
 import { Component } from 'react';
 
-import {Link , BrowserRouter , Switch , Route} from 'react-router-dom' ;
+import {Link , BrowserRouter , Switch , Route , Redirect} from 'react-router-dom' ;
 
 import './signup.css';
 
 class Signup extends Component {
+
+  handleSubmit(e)
+  {
+    if(e.target[1].value!==e.target[2].value)
+    {
+      alert("Password mismatch");
+    }
+    else {
+      return <Redirect to='/login' />
+    }
+    console.log(e);
+    e.preventDefault();
+  }
   render()
   {
     return (
@@ -52,6 +65,7 @@ class Signup extends Component {
                 {/*<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                         else.</small> */}
               </div>
+              <form onSubmit={this.handleSubmit.bind(this)}>
               <div className="form-group">
                 <input type="email" className="form-control form-input-text" id="bni_email" placeholder="Enter Email Address" required />
                 <label className="form-label" htmlFor="inputZip">E-mail Address</label>
@@ -140,6 +154,7 @@ class Signup extends Component {
               </div>
               {/*Text Input Ends*/}
               <button type="submit" className="submit-button" id="bni_signup">Sign Up</button>
+              </form>
             </div>
           </div>
         </main>

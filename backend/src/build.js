@@ -2,6 +2,7 @@ const express = require("express");
 const mysql = require("mysql");
 const cors = require("cors");
 //var randomstring = require("randomstring");
+var randomstring = require("randomstring");
 
 const app = express();
 
@@ -9,6 +10,9 @@ const database = require("./database.json");
 const searchFunctions = require("./search/searchFunctions");
 const port = 3001;
 const mysqlLoginCredential = require("../../authorise/mysql-login.json");
+
+const mapAPI = require("./mapAPI/api");
+const signupFunctions = require("./signup/functions");
 
 //!read the docs to get more clarity on why this is needed. (docs/backend.md)
 
@@ -49,7 +53,7 @@ app.post("/login", (req, res) => {
   //querying whether the user exists in the Login table or not
   pool.query(loginQuery, function (err, data) {
     if (err) {
-      console.log("Error in Login Part.");
+      console.log(err);
       res.status(500);
       return res.send("server error");
     }
@@ -269,11 +273,11 @@ app.post("/todo", (req, res) => {
       return res.send("server error");
     }
     if (data.affectedRows == 1) {
-    res.status(200);
-    return res.send("updated");
+      res.status(200);
+      return res.send("updated");
     } else {
       res.status(500);
-    return res.send("server error");
+      return res.send("server error");
     }
   });
 });
@@ -444,7 +448,7 @@ app.post("/search/item", (req, res) => {
 
           if (result) {
             var result_string = JSON.stringify(result);
-            brand_string = searchFunctions.getBrandList(result_string);//this was the goal ("1","2","3",........"n");
+            brand_string = searchFunctions.getBrandList(result_string); //this was the goal ("1","2","3",........"n");
 
             let searchBrands = `SELECT ??,??,??,?? FROM ?? WHERE ?? IN ${brand_string}`;
             let searchBrandsQuery = mysql.format(searchBrands, [
@@ -453,7 +457,7 @@ app.post("/search/item", (req, res) => {
               database.distributors.distributor_id,
               database.distributors.name,
               database.table.distributors,
-              database.distributors.brand
+              database.distributors.brand,
             ]);
 
             //querying whether the user exists in the Distributor table or not
@@ -491,6 +495,127 @@ app.post("/search/item", (req, res) => {
     });
   }
 });
+
+app.post("/signup", (req, res) => {
+  //taking login credentials
+  var id = randomstring.generate({
+    length: 8,
+    charset: "alphanumeric",
+  });
+  var email = req.query.email;
+  var name = req.query.name;
+  var contact = req.query.contact;
+  var password = req.query.password;
+  var address = req.query.address;
+  var todo = "[]";
+  var useThisAddressForMAPQuery = signupFunctions.returnSearchableAddress(
+    address
+  );
+  var location = mapAPI.getCoordinatesFromAddress(useThisAddressForMAPQuery).then(
+    (location) => {
+      let insertStringTraderTable =
+        "INSERT INTO ?? ( ?? , ?? , ?? , ?? , ?? , ?? , ?? ) VALUES ( ? , ? , ? , ? , ? , ? , ? )";
+      let insertQueryTraderTable;
+
+      insertQueryTraderTable = mysql.format(insertStringTraderTable, [
+        database.table.trader,
+        database.trader.trader_id,
+        database.trader.email,
+        database.trader.Name,
+        database.trader.phone,
+        database.trader.address,
+        database.trader.location,
+        database.trader.to_do,
+        id,
+        email,
+        name,
+        contact,
+        address,
+        location,
+        todo,
+      ]);
+
+      //querying whether the user exists in the Login table or not
+      pool.query(insertQueryTraderTable, function (err, data) {
+        if (err) {
+          console.log("Error in Trader Table Insertion Part.");
+          res.status(500);
+          return res.send("updated failed");
+        }
+        if (data.affectedRows == 1) {
+          let insertStringLoginTable =
+            "INSERT INTO ?? ( ?? , ?? , ?? ) VALUES ( ? , ? , ? )";
+          let insertQueryLoginTable;
+
+          insertQueryLoginTable = mysql.format(insertStringLoginTable, [
+            database.table.login,
+            database.login.email,
+            database.login.password,
+            database.login.login_id,
+            email,
+            password,
+            id
+          ]);
+
+          //querying whether the user exists in the Login table or not
+          pool.query(insertQueryLoginTable, function (err, data) {
+            if (err) {
+              console.log("Error in Login Table Insertion Part.");
+              res.status(500);
+              return res.send("updated failed");
+            }
+            if (data.affectedRows == 1) {
+              res.status(200);
+              return res.send("inserted");
+            } else {
+              res.status(500);
+              return res.send("server error");
+            }
+          });
+        } else {
+          res.status(500);
+          return res.send("server error");
+        }
+      });
+    },
+    (err) => {
+      res.status(500);
+      return res.send("server error");
+    }
+  );
+});
+
+
+//Get Profile Details of a Distributor
+app.get("/trader/orders", (req, res) => {
+  //taking login credentials
+  var id = req.query.id;
+  let orderDetails = "SELECT * FROM ?? WHERE ?? = ?";
+  let orderQuery;
+
+  orderQuery = mysql.format(orderDetails, [
+    database.table.orders,
+    database.orders.buyer,
+    id
+  ]);
+
+  //querying whether the user exists in the Login table or not
+  pool.query(orderQuery, function (err, data) {
+    if (err) {
+      console.log("Error in Orders Part.");
+      res.status(500);
+      return res.send("server error");
+    }
+    if (data) {
+      res.status(200);
+      return res.send(data);
+    } else {
+      res.status(404);
+      return res.send("not found");
+    }
+  });
+});
+
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
