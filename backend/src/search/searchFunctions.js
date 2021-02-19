@@ -1,5 +1,6 @@
 /**
- * 
+ * This has to be used when the user searches through brand and Item names.
+ *  WORKS FOR 2 SEARCH QUERY TYPES! YAYYY!!
  * @param {string} from_items_list stringified JSON of results from the items list
  * @param {string} from_distributors_list stringified JSON of results from the distributors list
  */

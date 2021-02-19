@@ -8,7 +8,7 @@ const database = require("./database.json");
 const searchFunctions = require("./search/searchFunctions");
 const port = 3001;
 const mysqlLoginCredential = require("../../../.authorize/mysql-login.json");
-const { makeReturnableItemJSONFromBrandSearch } = require("./search/searchFunctions");
+
 //!read the docs to get more clarity on why this is needed. (docs/backend.md)
 
 //const { reset } = require("nodemon");
@@ -281,7 +281,7 @@ app.post("/search/item", (req, res) => {
     let searchBrandInItemsQuery = mysql.format(searchBrandInItems, [
       database.table.items,
       database.items.brand,
-      search
+      search,
     ]);
 
     let searchBrandInDistributors = "SELECT ??,??,??,?? FROM ?? WHERE ?? = ?";
@@ -294,7 +294,7 @@ app.post("/search/item", (req, res) => {
         database.distributors.name,
         database.table.distributors,
         database.distributors.brand,
-        search
+        search,
       ]
     );
 
@@ -306,7 +306,6 @@ app.post("/search/item", (req, res) => {
         return res.send("server error");
       }
       if (data[0]) {
-
         //querying whether the user exists in the Distributor table or not
         pool.query(searchBrandInDistributorsQuery, function (error, result) {
           if (error) {
@@ -315,7 +314,10 @@ app.post("/search/item", (req, res) => {
           if (result[0]) {
             var data_string = JSON.stringify(data);
             var result_string = JSON.stringify(result);
-            var answer =  searchFunctions.makeReturnableItemJSONFromBrandSearch(data_string,result_string);
+            var answer = searchFunctions.makeReturnableItemJSONFromBrandSearch(
+              data_string,
+              result_string
+            );
             answer = JSON.parse(answer);
             res.status(200);
             return res.send(answer);
@@ -325,17 +327,78 @@ app.post("/search/item", (req, res) => {
           }
         });
       } else {
-        var answer = {
-          userExists: false,
-        };
         res.status(404);
-        return res.send(data + result);
+        return res.send("not found");
       }
     });
-
-
-
   }
+
+  if (search_in === String("product")) {
+    let searchItems = "SELECT * FROM ?? WHERE ?? = ?";
+    let searchItemsQuery = mysql.format(searchItems, [
+      database.table.items,
+      database.items.name,
+      search
+    ]);
+
+    //querying whether the user exists in the Login table or not
+    pool.query(searchItemsQuery, function (err, data) {
+      if (err) {
+        console.log("Error in Search Brand Part.");
+        res.status(500);
+        return res.send("server error");
+      }
+      if (data[0]) {
+
+        //next few lines will be some awful code. bear with it
+        let itemsSelections = JSON.stringify(data); //this I am doing to pass the value in in the variable instead of passing the reference
+        itemsSelections = JSON.parse(itemsSelections);
+        brand_name = itemsSelections[0].brand;
+
+        let searchBrandInDistributors = "SELECT ??,??,??,?? FROM ?? WHERE ?? = ?";
+        let searchBrandInDistributorsQuery = mysql.format(
+          searchBrandInDistributors,
+          [
+            database.distributors.items,
+            database.distributors.location,
+            database.distributors.distributor_id,
+            database.distributors.name,
+            database.table.distributors,
+            database.distributors.brand,
+            brand_name
+          ]
+        );
+
+        //querying whether the user exists in the Distributor table or not
+        pool.query(searchBrandInDistributorsQuery, function (error, result) {
+          if (error) {
+            console.log("Error in Sub Search Brand Part.");
+          }
+          if (result[0]) {
+            var data_string = JSON.stringify(data);
+            var result_string = JSON.stringify(result);
+            var answer = searchFunctions.makeReturnableItemJSONFromBrandSearch(
+              data_string,
+              result_string
+            );
+
+            answer = JSON.parse(answer);
+            res.status(200);
+            return res.send(answer);
+          } else {
+            res.status(404);
+            return res.send("not found");
+          }
+        });
+      } else {
+        res.status(404);
+        return res.send("not found");
+      }
+    });
+  }
+
+
+
 });
 
 app.listen(port, () => {
