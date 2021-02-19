@@ -585,6 +585,38 @@ app.post("/signup", (req, res) => {
   );
 });
 
+
+//Get Profile Details of a Distributor
+app.get("/trader/orders", (req, res) => {
+  //taking login credentials
+  var id = req.query.id;
+  let orderDetails = "SELECT * FROM ?? WHERE ?? = ?";
+  let orderQuery;
+
+  orderQuery = mysql.format(orderDetails, [
+    database.table.orders,
+    database.orders.buyer,
+    id
+  ]);
+
+  //querying whether the user exists in the Login table or not
+  pool.query(orderQuery, function (err, data) {
+    if (err) {
+      console.log("Error in Orders Part.");
+      res.status(500);
+      return res.send("server error");
+    }
+    if (data) {
+      res.status(200);
+      return res.send(data);
+    } else {
+      res.status(404);
+      return res.send("not found");
+    }
+  });
+});
+
+
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
 });
