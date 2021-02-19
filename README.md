@@ -17,6 +17,12 @@
 </a>
 </p>
 
+<p id="Installation"><h2><font>🚀 Deployment Status </font></h2></p>
+<UL>
+        <li>Backend: Deployed on "http://kraya-anti.herokuapp.com/"
+        <li>Frontend: Deployment in progress
+</UL> 
+
 ## 📫 Idea Abstract
 <UL>
         <li><a href = "https://drive.google.com/file/d/1CvZo34A2acqv5k0peHJpNGbSgtSS0kuX/view?usp=sharing"> Idea Presentation </a> 
