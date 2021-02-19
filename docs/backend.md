@@ -2,7 +2,7 @@
 * This documentation will give you a step by step instruction on how to set up backend on your local machine or server.
 
 ## For connecting to your mysql database
-* In a folder named **authorise** Configure **mysql-login.json** with the information asked. *The project wil start working on the mysql on your machine*
+* In the folder named **authorise** Configure **mysql-login.json** with the information asked. *The project wil start working on the mysql on your machine*
   
 ```json
 {
@@ -12,7 +12,7 @@
 }
 ```
 ## For connecting to the map quest api
-* In a folder named **authorise** Configure **api.json** with the information asked. *The project wil start using your api*
+* In the folder named **authorise** Configure **api.json** with the information asked. *The project wil start using your api*
 * Get Map Quest API [here](https://developer.mapquest.com/)
   
 ```json
