@@ -4,6 +4,11 @@ import OrderCard from './OrderCard';
 
 const OrderList = (props) => {
 
+    if(!props.data) {
+        return (
+            <div></div>
+        )
+    } else {
         //Dynamic list of choices
         return (
             <div className="orderlist-container" style={{width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor:'#e0e0e0'}}>
@@ -22,6 +27,6 @@ const OrderList = (props) => {
             </div>
         );
     }
-    
+}   
 
 export default OrderList;

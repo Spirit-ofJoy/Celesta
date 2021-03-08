@@ -73,7 +73,7 @@ class Dashboard extends Component {
                                 </Route>
 
                                 <Route path="/trader/prev_orders" >
-                                    <motion.div initial="out" animate="in" exit="exit" variants={traderPageVariants} transition={traderPageTransitions}> <PreviousOrders /> </motion.div>
+                                    <motion.div initial="out" animate="in" exit="exit" variants={traderPageVariants} transition={traderPageTransitions}> <PreviousOrders web_loc={webLocation} id={this.state.traderData.trader_id}/> </motion.div>
                                 </Route>
 
                                 <Route path="/trader/toDo" >

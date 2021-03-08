@@ -32,12 +32,12 @@ const MapModal = (props) => {
             <>
                 <div style={OVERLAY_STYLE}>
                     <div style={MODAL_STYLE}>
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Location on Map</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={props.close}></button>
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title">Location on Map</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={props.close}></button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             <div id="map" style={{width:'700px', height:'500px', backgroundColor:'black'}}>
                                 <iframe src={mapLocation} width="700px" height="500px" />
                             </div>

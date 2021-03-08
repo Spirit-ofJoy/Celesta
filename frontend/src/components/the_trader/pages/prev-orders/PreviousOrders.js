@@ -1,16 +1,44 @@
 import React from 'react';
+import {Component} from 'react';
 
 import OrderList from './OrderList';
 
-const PreviousOrders = (props) => {
+class PreviousOrders extends Component {
 
-    return (
-        <div className="card" id="trader-prevOrder-container">
-            <h1 style={{margin:'30px'}}>Your Previous Orders</h1>
-            <OrderList data={orderData}/>
-        </div>
+    constructor(props) {
+        super(props);
 
-    ); 
+        this.state = { 
+            id: this.props.id,
+            webLocation : this.props.web_loc, 
+            OrderData : null
+        };
+    }
+
+    componentDidMount(props) {
+        let urlReq = this.state.webLocation+'trader/orders?id='+this.state.id;
+
+        fetch(urlReq, {
+            method: "GET",
+        })
+        .then(response => response.json())
+        .then(data => this.setState({OrderData:data}), console.log);
+    }
+
+    checkData = () => {
+        console.log(this.state);
+    }
+
+    render() {
+        return (
+            <div className="card" id="trader-prevOrder-container">
+                <h1 style={{ margin: '30px' }}>Your Previous Orders </h1>
+                {/* <button type="button" className="btn btn-primary" onClick={() => this.checkData() }></button> */}
+                <OrderList data={this.state.OrderData} />
+            </div>
+
+        ); 
+    }
 }
 
 
